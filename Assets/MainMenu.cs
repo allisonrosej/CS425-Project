@@ -15,4 +15,9 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Level_1");
     }
+
+    public void optionsButton()
+    {
+        SceneManager.LoadScene("Options Menu");
+    }
 }
