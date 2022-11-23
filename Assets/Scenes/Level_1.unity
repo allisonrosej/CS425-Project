@@ -558,6 +558,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5013296036451910693, guid: 1626eaf3b1d68614c935582df42f3a19,
+        type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013296036451910693, guid: 1626eaf3b1d68614c935582df42f3a19,
+        type: 3}
+      propertyPath: jumpforce
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013296036451910693, guid: 1626eaf3b1d68614c935582df42f3a19,
+        type: 3}
+      propertyPath: fallMultiplier
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5013296036451910718, guid: 1626eaf3b1d68614c935582df42f3a19,
         type: 3}
       propertyPath: m_Name
