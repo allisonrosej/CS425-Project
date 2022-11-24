@@ -14,4 +14,9 @@ public class OptionsMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Controls Menu");
     }
+
+    public void controlsBackButton()
+    {
+        SceneManager.LoadScene("Options Menu");
+    }
 }
