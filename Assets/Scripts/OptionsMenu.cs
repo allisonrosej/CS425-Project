@@ -9,4 +9,9 @@ public class OptionsMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Main Menu");
     }
+
+    public void optionsControlsButton()
+    {
+        SceneManager.LoadScene("Controls Menu");
+    }
 }
