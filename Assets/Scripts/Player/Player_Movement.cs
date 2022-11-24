@@ -12,6 +12,29 @@ public class Player_Movement : MonoBehaviour
     [Header("Jump Settings")]
     public Transform groundCheck;
     public LayerMask Ground;
+<<<<<<< Updated upstream
+=======
+    public float jumpforce;
+    public int extraJumps;
+    public float fallMultiplier = 2.5f;
+    public float lowJumpMultiplier = 2f;
+    private float checkRadius = 0.5f;
+    private bool isGrounded;
+
+    [Header("Wall Sliding Settings")]
+    public float wallSlideSpeed;
+    public LayerMask Wall;
+    public Transform wallCheck;
+    public Vector2 WallCheckSize;
+    private bool isOnWall;
+    private bool isWallSliding;
+
+    [Header("Wall Jump Settings")]
+    public float wallJumpForce = 5f;
+    public float wallJumpDir = -1f;
+    public Vector2 wallJumpAngle; 
+
+>>>>>>> Stashed changes
 
     public int extraJumps; 
 
@@ -20,14 +43,17 @@ public class Player_Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+<<<<<<< Updated upstream
         rb = GetComponent<Rigidbody2D>();  
         
+=======
         horizontalInput = Input.GetAxis("Horizontal");
         Movement();
         CheckArea();
         Jump();
         WallSlide();
 
+>>>>>>> Stashed changes
     }
 
     // Update is called once per frame
@@ -43,11 +69,15 @@ public class Player_Movement : MonoBehaviour
     void CheckArea()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, Ground);
+<<<<<<< Updated upstream
+        horizontalInput = Input.GetAxis("Horizontal");
+=======
         isOnWall = Physics2D.OverlapCircle(wallCheck.position, checkRadius, Wall);
     }
 
     void Movement()
     {
+>>>>>>> Stashed changes
 
         rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
 
@@ -120,6 +150,7 @@ public class Player_Movement : MonoBehaviour
     {
         wallJumpDir *= -1;
         facingRight = !facingRight;
+>>>>>>> Stashed changes
         Vector3 temp = transform.localScale;
         temp.x = temp.x * -1;
         transform.localScale = temp;
