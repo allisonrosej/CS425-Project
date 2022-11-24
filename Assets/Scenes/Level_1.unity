@@ -1898,12 +1898,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< Updated upstream
-=======
     - target: {fileID: 5013296036451910693, guid: 1626eaf3b1d68614c935582df42f3a19,
         type: 3}
       propertyPath: speed
-      value: 6.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5013296036451910693, guid: 1626eaf3b1d68614c935582df42f3a19,
         type: 3}
@@ -1912,20 +1910,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5013296036451910693, guid: 1626eaf3b1d68614c935582df42f3a19,
         type: 3}
-      propertyPath: wallCheck
-      value: 
-      objectReference: {fileID: 1966192113}
-    - target: {fileID: 5013296036451910693, guid: 1626eaf3b1d68614c935582df42f3a19,
-        type: 3}
-      propertyPath: Wall.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
-    - target: {fileID: 5013296036451910693, guid: 1626eaf3b1d68614c935582df42f3a19,
-        type: 3}
       propertyPath: fallMultiplier
       value: 3
       objectReference: {fileID: 0}
->>>>>>> Stashed changes
     - target: {fileID: 5013296036451910718, guid: 1626eaf3b1d68614c935582df42f3a19,
         type: 3}
       propertyPath: m_Name
