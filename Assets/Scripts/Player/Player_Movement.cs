@@ -12,22 +12,21 @@ public class Player_Movement : MonoBehaviour
     [Header("Jump Settings")]
     public Transform groundCheck;
     public LayerMask Ground;
-    public float jumpforce;
-    public int extraJumps;
-    public float fallMultiplier = 2.5f;
-    public float lowJumpMultiplier = 2f;
-    private float checkRadius = 0.5f;
-    private bool isGrounded;
-    
-    
-    
 
-    private Rigidbody2D rb;
+    public int extraJumps; 
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();  
+        
+        horizontalInput = Input.GetAxis("Horizontal");
+        Movement();
+        CheckArea();
+        Jump();
+        WallSlide();
 
     }
 
@@ -44,6 +43,7 @@ public class Player_Movement : MonoBehaviour
     void CheckArea()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, Ground);
+        isOnWall = Physics2D.OverlapCircle(wallCheck.position, checkRadius, Wall);
     }
 
     void Movement()
@@ -89,8 +89,36 @@ public class Player_Movement : MonoBehaviour
         }
 
     }
+
+    void WallSlide()
+    {
+        if (isOnWall && !isGrounded && rb.velocity.y < 0)
+        {
+            isWallSliding = true; 
+
+        }
+        else
+        {
+            isWallSliding = false;
+
+        }
+
+        if (isWallSliding)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, wallSlideSpeed);
+        }
+    }
+
+    void WallJump()
+    {
+        //if (isWallSliding || isOnWall)
+        //{
+        //    if ()
+        //}
+    }
     void Flip()
     {
+        wallJumpDir *= -1;
         facingRight = !facingRight;
         Vector3 temp = transform.localScale;
         temp.x = temp.x * -1;
