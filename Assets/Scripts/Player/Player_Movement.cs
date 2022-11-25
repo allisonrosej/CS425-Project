@@ -19,8 +19,13 @@ public class Player_Movement : MonoBehaviour
     private float checkRadius = 0.5f;
     private bool isGrounded;
     
-    
-    
+    [Header("Dashing Settings")]
+    private bool canDash = true;
+    private bool isDashing;
+    public float dashingPower = 24f;
+    public float dashingTime = 0.2f;
+    public float dashingCooldown = 1f;
+    private TrailRenderer tr;
 
     private Rigidbody2D rb;
 
@@ -38,7 +43,7 @@ public class Player_Movement : MonoBehaviour
         Movement();
         CheckArea();
         Jump();
-
+        DashMove();
     }
 
     void CheckArea()
@@ -87,6 +92,11 @@ public class Player_Movement : MonoBehaviour
         {
             rb.velocity = Vector2.up * jumpforce;
         }
+    
+        if (Input.GetKeyDown(KeyCode.D) && canDash)
+        {
+            StartCoroutine(DashMove());
+        }
 
     }
     void Flip()
@@ -96,6 +106,28 @@ public class Player_Movement : MonoBehaviour
         temp.x = temp.x * -1;
         transform.localScale = temp;
 
-
+    }
+     IEnumerator DashMove()
+    {
+       canDash = false;
+        //isDashing = true;
+        float originalGravity = rb.gravityScale; // allows player not to be affected by gravity
+        rb.gravityScale = 0f; // sets gravity to zero
+        rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+        tr.emitting = true; //display trail (IDK if we want this)
+        yield return new WaitForSeconds(dashingTime); // stops the player from dashing forever
+        tr.emitting = false; // stops displaying the trail render
+        rb.gravityScale = originalGravity;  // sets the gravity to og scale
+        //isDashing = false; // stops dashing
+        yield return new WaitForSeconds(dashingCooldown); // allows a dashcool down
+        canDash = true; // player can dash again after cooldown is done
     }
 }
+
+
+
+
+
+
+    
+   
