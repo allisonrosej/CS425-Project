@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4172087623574647735
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3389149583889014021}
+  m_Layer: 0
+  m_Name: Wall Check
+  m_TagString: Untagged
+  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3389149583889014021
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4172087623574647735}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.53, y: -0.023, z: -0.5000001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5013296036451910688}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5013296034752356758
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,6 +353,7 @@ Transform:
   - {fileID: 5013296036040611090}
   - {fileID: 5013296035933001287}
   - {fileID: 5013296036282902446}
+  - {fileID: 3389149583889014021}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -438,10 +470,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  jumpforce: 5
   groundCheck: {fileID: 5013296036282902446}
-  checkRadius: 0.5
   Ground:
     serializedVersion: 2
     m_Bits: 128
+  jumpforce: 5
   extraJumps: 0
+  fallMultiplier: 2.5
+  lowJumpMultiplier: 2
+  wallSlidingSpeed: 0
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  wallCheck: {fileID: 3389149583889014021}
+  WallCheckSize: {x: 0, y: 0}
