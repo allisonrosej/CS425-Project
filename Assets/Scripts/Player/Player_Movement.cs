@@ -6,8 +6,10 @@ public class Player_Movement : MonoBehaviour
 {
     [Header("Movement Settings")]
     public float speed;
+    public float airMoveSpeed = 12f;
     private bool facingRight = true;
     private float horizontalInput;
+
 
     [Header("Jump Settings")]
     public Transform groundCheck;
@@ -18,9 +20,19 @@ public class Player_Movement : MonoBehaviour
     public float lowJumpMultiplier = 2f;
     private float checkRadius = 0.5f;
     private bool isGrounded;
-    
-    
-    
+
+    [Header("Wall Sliding Settings")]
+    public float wallSlidingSpeed = 0;
+    public LayerMask wallLayer;
+    public Transform wallCheck;
+    public Vector2 WallCheckSize;
+    private bool isTouchingWall;
+    private bool isWallSliding;
+
+    [Header("Wall Jump Settings")]
+    public float wallJumpForce = 18f;
+    public float wallJumpDir = -1f;
+    public Vector2 wallJumpAngle;
 
     private Rigidbody2D rb;
 
@@ -28,7 +40,7 @@ public class Player_Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        wallJumpAngle.Normalize();
     }
 
     // Update is called once per frame
@@ -38,18 +50,31 @@ public class Player_Movement : MonoBehaviour
         Movement();
         CheckArea();
         Jump();
-
+        WallSlide();
+        WallJump();
     }
 
     void CheckArea()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, Ground);
+        isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, checkRadius, wallLayer);
     }
 
     void Movement()
     {
+        if (isGrounded)
+        {
+            rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
 
-        rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
+        }
+        else if(!isGrounded && !isWallSliding && horizontalInput != 0)
+        {
+            rb.AddForce(new Vector2(airMoveSpeed * horizontalInput, 0));
+            if (Mathf.Abs(rb.velocity.x) > speed )
+            {
+                rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
+            }
+        }
 
 
         if (facingRight == false && horizontalInput > 0)
@@ -89,12 +114,44 @@ public class Player_Movement : MonoBehaviour
         }
 
     }
+
+    void WallSlide()
+    {
+        if (isTouchingWall && !isGrounded && rb.velocity.y < 0)
+        {
+            isWallSliding = true;
+
+        }
+        else
+        {
+            isWallSliding = false;
+
+        }
+
+        if (isWallSliding)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, wallSlidingSpeed);
+        }
+    }
+
+    void WallJump()
+    {
+        if ((isWallSliding || isTouchingWall) && Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddForce(new Vector2(wallJumpForce * wallJumpDir * wallJumpAngle.x, wallJumpForce * wallJumpAngle.y), ForceMode2D.Impulse);
+        }
+    }
     void Flip()
     {
-        facingRight = !facingRight;
-        Vector3 temp = transform.localScale;
-        temp.x = temp.x * -1;
-        transform.localScale = temp;
+        if (!isWallSliding)
+        {
+            wallJumpDir *= -1;
+            facingRight = !facingRight;
+            Vector3 temp = transform.localScale;
+            temp.x = temp.x * -1;
+            transform.localScale = temp;
+        }
+        
 
 
     }
