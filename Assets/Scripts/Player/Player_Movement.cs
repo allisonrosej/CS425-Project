@@ -21,6 +21,7 @@ public class Player_Movement : MonoBehaviour
     private float checkRadius = 0.5f;
     private bool isGrounded;
 
+
     [Header("Wall Sliding Settings")]
     public float wallSlidingSpeed = 0;
     public LayerMask wallLayer;
@@ -34,6 +35,14 @@ public class Player_Movement : MonoBehaviour
     public float wallJumpDir = -1f;
     public Vector2 wallJumpAngle;
 
+ [Header("Dashing Settings")]
+    public bool canDash = true;
+    public bool isDashing;
+    public float dashingPower = 24f;
+    public float dashingTime = 0.2f;
+    public float dashingCooldown = 1f;
+     [SerializeField] public TrailRenderer tr; 
+   
     private Rigidbody2D rb;
 
     // Start is called before the first frame update
@@ -50,8 +59,12 @@ public class Player_Movement : MonoBehaviour
         Movement();
         CheckArea();
         Jump();
-        WallSlide();
         WallJump();
+        Dash();  
+         if (Input.GetKeyDown(KeyCode.X) && canDash)
+        {
+            StartCoroutine(Dash()); // This need to change
+        }
     }
 
     void CheckArea()
@@ -112,6 +125,8 @@ public class Player_Movement : MonoBehaviour
         {
             rb.velocity = Vector2.up * jumpforce;
         }
+           
+
 
     }
 
@@ -151,8 +166,25 @@ public class Player_Movement : MonoBehaviour
             temp.x = temp.x * -1;
             transform.localScale = temp;
         }
-        
-
-
     }
+    IEnumerator Dash() 
+    {
+       
+
+        canDash = false;
+        isDashing = true;
+        float originalGravity = rb.gravityScale; // allows player not to be affected by gravity
+        rb.gravityScale = 0f; // sets gravity to zero
+        rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+        tr.emitting = true; //display trail (IDK if we want this)
+        yield return new WaitForSeconds(dashingTime); // stops the player from dashing forever
+        tr.emitting = false; // stops displaying the trail render ( animation tail following the character)
+        rb.gravityScale = originalGravity;  // sets the gravity to og scale
+        isDashing = false; // stops dashing
+        yield return new WaitForSeconds(dashingCooldown); // allows a dash cooldown
+        canDash = true; // player can dash again after cooldown is done
+
+         
+    }
+   
 }
