@@ -37,8 +37,9 @@ public class Player_Movement : MonoBehaviour
 
  [Header("Dashing Settings")]
     public bool canDash = true;
+    public bool movementCanDash = true;
     public bool isDashing;
-    public float dashingPower = 24f;
+    public float dashingPower = 125f;
     public float dashingTime = 0.2f;
     public float dashingCooldown = 1f;
      [SerializeField] public TrailRenderer tr; 
@@ -60,11 +61,23 @@ public class Player_Movement : MonoBehaviour
         CheckArea();
         Jump();
         WallJump();
+        
+        if(!Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
+        {
+            movementCanDash = false;
+        }
+
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))  
+        {
+            movementCanDash = true;
+        }
+        
         Dash();  
-         if (Input.GetKeyDown(KeyCode.X) && canDash)
+        if (Input.GetKeyDown(KeyCode.X) && canDash && movementCanDash)
         {
             StartCoroutine(Dash()); // This need to change
         }
+        
     }
 
     void CheckArea()
