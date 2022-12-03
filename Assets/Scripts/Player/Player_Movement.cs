@@ -60,6 +60,7 @@ public class Player_Movement : MonoBehaviour
         Movement();
         CheckArea();
         Jump();
+        WallSlide();
         WallJump();
         
         if(!Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
@@ -101,6 +102,10 @@ public class Player_Movement : MonoBehaviour
                 rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
             }
         }
+        //else if(isTouchingWall && horizontalInput != 0)
+        //{
+        //    rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
+        //}
 
 
         if (facingRight == false && horizontalInput > 0)
