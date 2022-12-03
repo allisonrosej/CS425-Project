@@ -45,11 +45,13 @@ public class Player_Movement : MonoBehaviour
      [SerializeField] public TrailRenderer tr; 
    
     private Rigidbody2D rb;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         wallJumpAngle.Normalize();
     }
 
@@ -89,6 +91,16 @@ public class Player_Movement : MonoBehaviour
 
     void Movement()
     {
+        // For animations
+        if (horizontalInput != 0)
+        {
+            animator.SetBool("isWalking", true);
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
+
         if (isGrounded)
         {
             rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
