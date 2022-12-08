@@ -70,7 +70,7 @@ public class Player_Movement : MonoBehaviour
             movementCanDash = false;
         }
 
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))  
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D));
         {
             movementCanDash = true;
         }
