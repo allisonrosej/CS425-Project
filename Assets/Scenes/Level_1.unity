@@ -9394,6 +9394,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5013296036451910693, guid: 1626eaf3b1d68614c935582df42f3a19,
         type: 3}
+      propertyPath: dashingPower
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013296036451910693, guid: 1626eaf3b1d68614c935582df42f3a19,
+        type: 3}
       propertyPath: wallJumpForce
       value: 6
       objectReference: {fileID: 0}
