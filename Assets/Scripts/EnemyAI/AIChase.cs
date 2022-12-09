@@ -9,7 +9,7 @@ public class AIChase : MonoBehaviour
     public float speed;
     public float distanceToAttackPlayer = 6;
     private float distance;
-
+    
 
     // Start is called before the first frame update
     void Start()
@@ -30,4 +30,6 @@ public class AIChase : MonoBehaviour
         }
 
     }
+
+    
 }

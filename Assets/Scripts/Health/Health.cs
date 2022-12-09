@@ -9,7 +9,12 @@ public class Health : MonoBehaviour
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
+    public static Health inst;
 
+    private void Awake()
+    {
+        inst = this; 
+    }
     private void Update()
     {
         DisplayHealth();
@@ -42,7 +47,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         health -=damage; 
 
@@ -51,5 +56,13 @@ public class Health : MonoBehaviour
             //Death animation
         }
 
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            TakeDamage(1);
+        }
     }
 }
