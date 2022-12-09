@@ -76,7 +76,7 @@ public class Player_Movement : MonoBehaviour
         }
         
         Dash();  
-        if (Input.GetKeyDown(KeyCode.X) && canDash && movementCanDash)
+        if (Input.GetKeyDown(KeyCode.J) && canDash && movementCanDash)
         {
             StartCoroutine(Dash()); // This need to change
         }
