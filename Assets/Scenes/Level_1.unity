@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 261.80054, g: 324.32776, b: 429.24692, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8911,8 +8911,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0011506081, y: 0}
-  m_Size: {x: 0.23122184, y: 0.39}
+  m_Offset: {x: -0.006580591, y: 0.015463024}
+  m_Size: {x: 0.5250201, y: 0.7301877}
   m_Direction: 0
 --- !u!1 &711851357
 GameObject:
@@ -16782,7 +16782,7 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: -10}
   smoothFactor: 2
   minValues: {x: -2.11, y: 1.79, z: -10}
-  maxValues: {x: 45.12, y: 2.89, z: -10}
+  maxValues: {x: 400, y: 2.89, z: -10}
 --- !u!1 &2051937206
 GameObject:
   m_ObjectHideFlags: 0
@@ -17535,7 +17535,7 @@ PrefabInstance:
     - target: {fileID: 5013296036282902446, guid: 1626eaf3b1d68614c935582df42f3a19,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.204
+      value: -0.42
       objectReference: {fileID: 0}
     - target: {fileID: 5013296036451910688, guid: 1626eaf3b1d68614c935582df42f3a19,
         type: 3}
@@ -17545,17 +17545,17 @@ PrefabInstance:
     - target: {fileID: 5013296036451910688, guid: 1626eaf3b1d68614c935582df42f3a19,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5013296036451910688, guid: 1626eaf3b1d68614c935582df42f3a19,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5013296036451910688, guid: 1626eaf3b1d68614c935582df42f3a19,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5013296036451910688, guid: 1626eaf3b1d68614c935582df42f3a19,
         type: 3}
@@ -17607,6 +17607,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5013296036451910689, guid: 1626eaf3b1d68614c935582df42f3a19,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8db74c243f3031a4c935132ffc41e921,
+        type: 3}
     - target: {fileID: 5013296036451910690, guid: 1626eaf3b1d68614c935582df42f3a19,
         type: 3}
       propertyPath: m_Constraints
