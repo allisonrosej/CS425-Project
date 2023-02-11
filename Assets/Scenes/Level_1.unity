@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 4
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 262.38354, g: 325.1084, b: 430.30957, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 175617759}
   m_Layer: 7
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10900,6 +10900,12 @@ RectTransform:
   m_AnchoredPosition: {x: 416, y: 208}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!4 &554954310 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3389149583889014021, guid: 1626eaf3b1d68614c935582df42f3a19,
+    type: 3}
+  m_PrefabInstance: {fileID: 5013296034827863185}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &606333116
 GameObject:
   m_ObjectHideFlags: 0
@@ -11344,8 +11350,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.006580591, y: 0.015463024}
-  m_Size: {x: 0.5250201, y: 0.7301877}
+  m_Offset: {x: -0.006580591, y: 0.003764391}
+  m_Size: {x: 0.5250201, y: 0.7535855}
   m_Direction: 0
 --- !u!1 &711851357
 GameObject:
@@ -13445,7 +13451,7 @@ GameObject:
   - component: {fileID: 2026415320}
   m_Layer: 8
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17287,7 +17293,12 @@ PrefabInstance:
     - target: {fileID: 3389149583889014021, guid: 1626eaf3b1d68614c935582df42f3a19,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.124
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172087623574647735, guid: 1626eaf3b1d68614c935582df42f3a19,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5013296036282902446, guid: 1626eaf3b1d68614c935582df42f3a19,
         type: 3}
@@ -17299,6 +17310,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.42
       objectReference: {fileID: 0}
+    - target: {fileID: 5013296036282902447, guid: 1626eaf3b1d68614c935582df42f3a19,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5013296036451910688, guid: 1626eaf3b1d68614c935582df42f3a19,
         type: 3}
       propertyPath: m_RootOrder
@@ -17307,12 +17323,12 @@ PrefabInstance:
     - target: {fileID: 5013296036451910688, guid: 1626eaf3b1d68614c935582df42f3a19,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.6648
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5013296036451910688, guid: 1626eaf3b1d68614c935582df42f3a19,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.4432
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5013296036451910688, guid: 1626eaf3b1d68614c935582df42f3a19,
         type: 3}
@@ -17377,6 +17393,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 5013296036451910690, guid: 1626eaf3b1d68614c935582df42f3a19,
         type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 70f4e0e7f0900074686d8c809618ea10, type: 2}
+    - target: {fileID: 5013296036451910690, guid: 1626eaf3b1d68614c935582df42f3a19,
+        type: 3}
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
@@ -17417,6 +17438,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5013296036451910693, guid: 1626eaf3b1d68614c935582df42f3a19,
         type: 3}
+      propertyPath: jumpForce
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013296036451910693, guid: 1626eaf3b1d68614c935582df42f3a19,
+        type: 3}
       propertyPath: jumpforce
       value: 6
       objectReference: {fileID: 0}
@@ -17427,8 +17453,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5013296036451910693, guid: 1626eaf3b1d68614c935582df42f3a19,
         type: 3}
+      propertyPath: wallDetection
+      value: 
+      objectReference: {fileID: 554954310}
+    - target: {fileID: 5013296036451910693, guid: 1626eaf3b1d68614c935582df42f3a19,
+        type: 3}
       propertyPath: wallJumpForce
-      value: 6
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5013296036451910693, guid: 1626eaf3b1d68614c935582df42f3a19,
         type: 3}
@@ -17459,6 +17490,11 @@ PrefabInstance:
         type: 3}
       propertyPath: wallSlidingSpeed
       value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013296036451910693, guid: 1626eaf3b1d68614c935582df42f3a19,
+        type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 5013296036451910718, guid: 1626eaf3b1d68614c935582df42f3a19,
         type: 3}
