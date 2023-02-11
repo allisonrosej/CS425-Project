@@ -18,7 +18,7 @@ public class Player_Movement : MonoBehaviour
     public int extraJumps;
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
-    private float checkRadius = 0.5f;
+    private float checkRadius = 0.2f;
     private bool isGrounded;
 
 
@@ -162,7 +162,7 @@ public class Player_Movement : MonoBehaviour
 
     void WallSlide()
     {
-        if (isTouchingWall && !isGrounded && rb.velocity.y < 0)
+        if (isTouchingWall && !isGrounded && horizontalInput != 0)
         {
             isWallSliding = true;
 
@@ -175,7 +175,7 @@ public class Player_Movement : MonoBehaviour
 
         if (isWallSliding)
         {
-            rb.velocity = new Vector2(rb.velocity.x, wallSlidingSpeed);
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
         }
     }
 
