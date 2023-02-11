@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 4
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 262.38354, g: 325.1084, b: 430.30957, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8688,7 +8688,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 43
-      m_TileSpriteIndex: 32
+      m_TileSpriteIndex: 34
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -8728,7 +8728,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 42
-      m_TileSpriteIndex: 25
+      m_TileSpriteIndex: 33
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -8788,7 +8788,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 39
-      m_TileSpriteIndex: 20
+      m_TileSpriteIndex: 32
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -9867,8 +9867,8 @@ Tilemap:
     m_Data: {fileID: -303046496, guid: 576bc6975cbe17b4da93a0eef0db8084, type: 3}
   - m_RefCount: 118
     m_Data: {fileID: -1823896739, guid: 576bc6975cbe17b4da93a0eef0db8084, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 425774022, guid: 4a532150e84fd74499f441b27b65def5, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: -898702164, guid: 576bc6975cbe17b4da93a0eef0db8084, type: 3}
   - m_RefCount: 3
@@ -9877,8 +9877,8 @@ Tilemap:
     m_Data: {fileID: 281759757, guid: 338664006d146974486378bc26d366e4, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -590892529, guid: 338664006d146974486378bc26d366e4, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 787376814, guid: f58af3bc3218be24e8427dda2d362620, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -581217597, guid: 23cde7df76f15a74499e976adb10014a, type: 3}
   - m_RefCount: 7
@@ -9892,11 +9892,11 @@ Tilemap:
   - m_RefCount: 22
     m_Data: {fileID: 1696673256, guid: 23cde7df76f15a74499e976adb10014a, type: 3}
   - m_RefCount: 1
+    m_Data: {fileID: 425774022, guid: 4a532150e84fd74499f441b27b65def5, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 787376814, guid: f58af3bc3218be24e8427dda2d362620, type: 3}
+  - m_RefCount: 1
     m_Data: {fileID: -1762285878, guid: f58af3bc3218be24e8427dda2d362620, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: -163141344, guid: 23cde7df76f15a74499e976adb10014a, type: 3}
   - m_RefCount: 1
@@ -16825,8 +16825,8 @@ MonoBehaviour:
   Player: {fileID: 709951708}
   offset: {x: 0, y: 0, z: -10}
   smoothFactor: 2
-  minValues: {x: -2.11, y: 1.79, z: -10}
-  maxValues: {x: 400, y: 2.89, z: -10}
+  minValues: {x: -1, y: 3.25, z: -10}
+  maxValues: {x: 400, y: 4, z: -10}
 --- !u!1 &2051937206
 GameObject:
   m_ObjectHideFlags: 0
