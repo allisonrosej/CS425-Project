@@ -10,6 +10,24 @@ public class Health : MonoBehaviour
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
+    // Leo's code for iframes. This variable keeps track if player is invincible
+    private bool isInvincible = false;
+
+    [SerializeField]
+    private float invincibilityDurationSeconds;
+
+    // Leo's code for iframes
+    public IEnumerator BecomeTemporarilyInvincible()
+    {
+        Debug.Log("Player turned invincible!");
+        isInvincible = true;
+
+        yield return new WaitForSeconds(invincibilityDurationSeconds);
+        isInvincible = false;
+        Debug.Log("Player is no longer invincible!");
+    }
+
+
     private void Update()
     {
         DisplayHealth();
@@ -44,13 +62,18 @@ public class Health : MonoBehaviour
 
     void TakeDamage(int damage)
     {
-        health -=damage; 
+
+        // Iframes ****************
+        if (isInvincible) return;
+
+        health -= damage;
 
         if (health <= 0)
         {
             //Death animation
         }
 
+        StartCoroutine(BecomeTemporarilyInvincible());
 
     }
 
