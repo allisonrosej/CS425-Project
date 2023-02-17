@@ -1,41 +1,56 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading.Tasks;
 
 public class Player_Movement : MonoBehaviour
 {
     [Header("Movement Settings")]
-    public float speed;
-    public float airMoveSpeed = 12f;
-    private bool facingRight = true;
-    private float horizontalInput;
-
+    public float currentSpeed = 350f;
+    private float horizontalDir;
+    private bool canMove = true;
+    public float gravity = 6f;
 
     [Header("Jump Settings")]
-    public Transform groundCheck;
-    public LayerMask Ground;
-    public float jumpforce;
-    public int extraJumps;
-    public float fallMultiplier = 2.5f;
-    public float lowJumpMultiplier = 2f;
-    private float checkRadius = 0.5f;
-    private bool isGrounded;
-
+    public float jumpForce = 22f;
+    public int MaxAirJumps = 1;
+    public int currentJumps = 0;
+    public float maxFallingSpeed = 20;
+    public float airControl = 1;
+    public bool controlJumpHeight = true;
+    public bool fasterFalling = true;
 
     [Header("Wall Sliding Settings")]
-    public float wallSlidingSpeed = 0;
+    public float wallSlideSpeed = 2;
     public LayerMask wallLayer;
-    public Transform wallCheck;
-    public Vector2 WallCheckSize;
-    private bool isTouchingWall;
-    private bool isWallSliding;
+    public LayerMask groundLayer;
+    public Transform wallDetection;
+    public bool enableWallSlide = true;
 
     [Header("Wall Jump Settings")]
-    public float wallJumpForce = 18f;
-    public float wallJumpDir = -1f;
-    public Vector2 wallJumpAngle;
+    public float wallJumpForce = 25f;
+    public float jumpDelay = 0.5f;
+    public bool EnableWallJump = true;
 
- [Header("Dashing Settings")]
+    [Header("Player States Settings")]
+    public bool isFacingRight;
+    public bool isStanding;
+    public bool isWalking;
+    public bool isInAir;
+    public bool isFalling;
+    public bool isSliding;
+    public bool isGrounded;
+    public bool touchingWall;
+
+    // private members
+    private string groundTag = "Ground";
+    private string wallTag = "Ground";
+    private bool pauseInput = false;
+    private Rigidbody2D rb;
+    private CapsuleCollider2D capCol;
+    private Animator animator;
+
+    [Header("Dashing Settings")]
     public bool canDash = true;
     public bool movementCanDash = true;
     public bool isDashing;
@@ -44,28 +59,29 @@ public class Player_Movement : MonoBehaviour
     public float dashingCooldown = 1f;
      [SerializeField] public TrailRenderer tr; 
    
-    private Rigidbody2D rb;
-    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-        wallJumpAngle.Normalize();
+        GetComponents();
+
+        rb.gravityScale = gravity;
     }
 
     // Update is called once per frame
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        Movement();
-        CheckArea();
+        if (pauseInput)
+            return;
+
+        horizontalDir = Input.GetAxisRaw("Horizontal");
+        Animation();
+        RotateToDirection();
+        UpdateMovementStates();
+        BetterJump();
         Jump();
-        WallSlide();
-        WallJump();
-        
-        if(!Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
+
+        if (!Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
         {
             movementCanDash = false;
         }
@@ -83,120 +99,240 @@ public class Player_Movement : MonoBehaviour
         
     }
 
-    void CheckArea()
+    private void FixedUpdate()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, Ground);
-        isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, checkRadius, wallLayer);
+        Movement();
+        WallSlide();
+        CheckGrounded();
+        CheckFalling();
+
+    }
+
+    void Animation()
+    {
+        animator.SetBool("isWalking", isWalking);
+    }
+    void GetComponents()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        capCol = GetComponent<CapsuleCollider2D>();
+        animator = GetComponent<Animator>();
+
     }
 
     void Movement()
     {
-        // For animations
-        if (horizontalInput != 0)
+        if (!canMove)
+            return;
+
+        if (!isInAir)
+            rb.velocity = new Vector2(horizontalDir * currentSpeed * Time.fixedDeltaTime, rb.velocity.y);
+        else
+            rb.velocity = new Vector2(horizontalDir * (airControl * currentSpeed) * Time.fixedDeltaTime, rb.velocity.y);
+    }
+
+    void RotateToDirection()
+    {
+        if (horizontalDir != 0 && canMove)
         {
-            animator.SetBool("isWalking", true);
+            if (horizontalDir > 0)
+            {
+
+                isFacingRight = true;
+                transform.rotation = new Quaternion(0, 0, 0, 0);
+            }
+            else if (horizontalDir < 0)
+            {
+                isFacingRight = false;
+                transform.rotation = new Quaternion(0, 180, 0, 0);
+            }
+        }
+    }
+
+    void UpdateMovementStates()
+    {
+        if (horizontalDir == 0)
+        {
+            isStanding = true;
+            isWalking = false;
+
         }
         else
         {
-            animator.SetBool("isWalking", false);
-        }
+            isStanding = false;
+            isWalking = true;
 
-        if (isGrounded)
+        }
+    }
+
+    void BetterJump()
+    {
+        if (isInAir && !isFalling && !Input.GetKey(KeyCode.Space)) // Stop Jumping when release jump button
         {
-            rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
-
-        }
-        else if(!isGrounded && !isWallSliding && horizontalInput != 0)
-        {
-            rb.AddForce(new Vector2(airMoveSpeed * horizontalInput, 0));
-            if (Mathf.Abs(rb.velocity.x) > speed )
-            {
-                rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
-            }
-        }
-        //else if(isTouchingWall && horizontalInput != 0)
-        //{
-        //    rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
-        //}
-
-
-        if (facingRight == false && horizontalInput > 0)
-        {
-            Flip();
+            if (controlJumpHeight)
+                rb.velocity += Vector2.up * -140 * Time.deltaTime;
         }
 
-        else if (facingRight == true && horizontalInput < 0)
-        {
-            Flip();
-        }
-
+        if (fasterFalling && isFalling)
+            rb.velocity += Vector2.up * -70 * Time.deltaTime;
     }
 
     void Jump()
     {
-        if (rb.velocity.y < 0)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+            Debug.Log("Jump");
+            if (!isSliding)
+            {
+                if (!isInAir) GroundJump();
+                else AirJump();
+            }
+            else
+            {
+                WallJump();
+            }
         }
-        else if (rb.velocity.y > 0 && !Input.GetKey(KeyCode.Space))
-        {
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
-        }
-        if (isGrounded == true)
-        {
-            extraJumps = 1;
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && extraJumps > 0)
-        {
-            rb.velocity = Vector2.up * jumpforce;
-            extraJumps--;
-        }
-        else if (Input.GetKeyDown(KeyCode.Space) && extraJumps == 0 && isGrounded == true)
-        {
-            rb.velocity = Vector2.up * jumpforce;
-        }
-           
+    }
 
+    void GroundJump()
+    {
+        rb.velocity = Vector2.up * jumpForce;
+        isInAir = true;
+        canMove = true;
+    }
 
+    void AirJump()
+    {
+        if (currentJumps >= MaxAirJumps)
+            return;
+
+        rb.gravityScale = gravity;
+        rb.velocity = new Vector2(0, 0);
+        rb.velocity = Vector2.up * jumpForce;
+        currentJumps++; // increment jumps to make sure it not over MaxAirJumps
+    }
+
+    async void WallJump()
+    {
+        if (!EnableWallJump)
+            return;
+        // initially make velocity zero
+        rb.velocity = Vector2.zero;
+
+        rb.AddForce(new Vector2(wallJumpForce / 2 * -horizontalDir, wallJumpForce), ForceMode2D.Impulse);
+        pauseInput = true;
+
+        horizontalDir = -horizontalDir;
+
+        if (horizontalDir > 0)
+        {
+            isFacingRight = true;
+            transform.rotation = new Quaternion(0, 0, 0, 0);
+        }
+        else if (horizontalDir < 0)
+        {
+            isFacingRight = false;
+            transform.rotation = new Quaternion(0, 180, 0, 0);
+        }
+
+        await Task.Delay((int)(jumpDelay * 1000)); // duration after you get control back 
+
+        pauseInput = false;
+        horizontalDir = -(horizontalDir);
     }
 
     void WallSlide()
     {
-        if (isTouchingWall && !isGrounded && rb.velocity.y < 0)
-        {
-            isWallSliding = true;
 
+        touchingWall = Physics2D.OverlapCircle(wallDetection.position, 0.2f, wallLayer);
+
+        if (touchingWall && !isGrounded && horizontalDir != 0)
+        {
+            isSliding = true;
         }
         else
         {
-            isWallSliding = false;
-
+            isSliding = false;
         }
 
-        if (isWallSliding)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, wallSlidingSpeed);
-        }
+        if (!enableWallSlide)
+            return;
+
+        if (isSliding)
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlideSpeed, float.MaxValue));
+
     }
 
-    void WallJump()
+    void CheckGrounded()
     {
-        if ((isWallSliding || isTouchingWall) && Input.GetKeyDown(KeyCode.Space))
+        // Make sure you set the ground layer to the ground
+        RaycastHit2D ray;
+
+        if (transform.rotation.y == 0)
         {
-            rb.AddForce(new Vector2(wallJumpForce * wallJumpDir * wallJumpAngle.x, wallJumpForce * wallJumpAngle.y), ForceMode2D.Impulse);
+            Vector2 position = new Vector2(capCol.bounds.center.x - capCol.bounds.extents.x, capCol.bounds.min.y);
+            ray = Physics2D.Raycast(position, Vector2.down, capCol.bounds.extents.y + 0.02f, groundLayer);
+        }
+        else
+        {
+            Vector2 position = new Vector2(capCol.bounds.center.x + capCol.bounds.extents.x, capCol.bounds.min.y);
+            ray = Physics2D.Raycast(position, Vector2.down, capCol.bounds.extents.y + 0.02f, groundLayer);
+        }
+
+        if (ray.collider != null)
+        {
+            isGrounded = true;
+        }
+        else
+        {
+            isGrounded = false;
         }
     }
-    void Flip()
+    void CheckFalling()
     {
-        if (!isWallSliding)
+
+        if (isGrounded)
         {
-            wallJumpDir *= -1;
-            facingRight = !facingRight;
-            Vector3 temp = transform.localScale;
-            temp.x = temp.x * -1;
-            transform.localScale = temp;
+            isInAir = false;
+            isFalling = false;
+        }
+        else
+        {
+            isInAir = true;
+
+            if (rb.velocity.y < 0)
+            {
+                isFalling = true;
+
+                if (rb.velocity.y <= -maxFallingSpeed)
+                    rb.velocity = new Vector3(rb.velocity.x, -maxFallingSpeed, rb.velocity.y);
+
+            }
+            else
+                isFalling = false;
+        }
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Reset Jump Counts When Collide With The Ground tag or wall tag
+        if (collision.collider.CompareTag(wallTag) || collision.collider.CompareTag(groundTag))
+        {
+            RaycastHit2D ray;
+            ray = Physics2D.Raycast(capCol.bounds.center, Vector2.down, capCol.bounds.extents.y + 0.02f, groundLayer);
+            Debug.Log(ray.collider);
+            Debug.DrawRay(capCol.bounds.center, Vector2.down, Color.red, 10, false);
+            // if the ray.collider is not equal to null it will reset current jumps
+            if (ray.collider != null)
+            {
+                isInAir = false;
+                currentJumps = 0;
+                isFalling = false;
+            }
         }
     }
+
     IEnumerator Dash() 
     {
        
