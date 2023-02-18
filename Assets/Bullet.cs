@@ -35,7 +35,15 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        hit = true; 
+        hit = true;
+
+        if (collision.gameObject.tag == "Enemy")
+        {
+            TestEnemy enemy;
+            enemy = collision.GetComponent<TestEnemy>();
+            enemy.TakeDamage(3);
+        }
+        
 
         cirCollider.enabled = false;
         animator.SetTrigger("Explode");

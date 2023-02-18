@@ -111,6 +111,8 @@ public class Player_Movement : MonoBehaviour
     void Animation()
     {
         animator.SetBool("isWalking", isWalking);
+        animator.SetBool("isWallSliding", isSliding);
+        //animator.SetBool("isJumping", isInAir);
     }
     void GetComponents()
     {
@@ -181,6 +183,7 @@ public class Player_Movement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            animator.SetTrigger("isJumping");
             Debug.Log("Jump");
             if (!isSliding)
             {
