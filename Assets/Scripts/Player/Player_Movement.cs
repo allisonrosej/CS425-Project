@@ -42,6 +42,15 @@ public class Player_Movement : MonoBehaviour
     public bool isGrounded;
     public bool touchingWall;
 
+    // How powerful knock back will be
+    public float KBForce;
+    // Counts how long KB lasts
+    public float KBCounter;
+    // How long KB lasts
+    public float KBTotalTime;
+    // Keeps track which direction player has been hit from
+    public bool KnockFromRight;
+
     // private members
     private string groundTag = "Ground";
     private string wallTag = "Ground";
@@ -125,10 +134,29 @@ public class Player_Movement : MonoBehaviour
         if (!canMove)
             return;
 
-        if (!isInAir)
-            rb.velocity = new Vector2(horizontalDir * currentSpeed * Time.fixedDeltaTime, rb.velocity.y);
-        else
-            rb.velocity = new Vector2(horizontalDir * (airControl * currentSpeed) * Time.fixedDeltaTime, rb.velocity.y);
+        if(KBCounter <= 0) // Disable movement when hit
+        {
+            if (!isInAir)
+                rb.velocity = new Vector2(horizontalDir * currentSpeed * Time.fixedDeltaTime, rb.velocity.y);
+            else
+                rb.velocity = new Vector2(horizontalDir * (airControl * currentSpeed) * Time.fixedDeltaTime, rb.velocity.y);
+        } else // If knockback is in effect
+        {
+            if (KnockFromRight == true)
+            {
+                rb.velocity = new Vector2(-KBForce, KBForce);
+            }
+            // Sends player to the right
+            if (KnockFromRight == false)
+            {
+                rb.velocity = new Vector2(KBForce, KBForce);
+            }
+
+            // Countdown to prevent knockback lasting forever
+            KBCounter -= Time.deltaTime;
+        }
+
+       
     }
 
     void RotateToDirection()

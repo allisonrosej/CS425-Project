@@ -60,10 +60,10 @@ public class Health : MonoBehaviour
         }
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
 
-        // Iframes ****************
+        // Iframes
         if (isInvincible) return;
 
         health -= damage;
@@ -75,14 +75,6 @@ public class Health : MonoBehaviour
 
         StartCoroutine(BecomeTemporarilyInvincible());
 
-    }
-
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            TakeDamage(1);
-        }
     }
 
 }

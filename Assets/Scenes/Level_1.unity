@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 262.302, g: 324.99048, b: 430.14307, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13742,6 +13742,7 @@ MonoBehaviour:
   - {fileID: 177127115}
   fullHeart: {fileID: 21300000, guid: 555046911c1000b478e9f364a40870b5, type: 3}
   emptyHeart: {fileID: 21300000, guid: 0e12b2f6dcb698b4ebf9c58369e7a4dc, type: 3}
+  playerMovement: {fileID: 709951720}
   invincibilityDurationSeconds: 0
 --- !u!70 &709951719
 CapsuleCollider2D:
@@ -13759,6 +13760,18 @@ CapsuleCollider2D:
   m_Offset: {x: -0.006580591, y: 0.003764391}
   m_Size: {x: 0.5250201, y: 0.7535855}
   m_Direction: 0
+--- !u!114 &709951720 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5013296036451910693, guid: 1626eaf3b1d68614c935582df42f3a19,
+    type: 3}
+  m_PrefabInstance: {fileID: 5013296034827863185}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709951690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65dde1daeb26e1c4da4bd8305f38daf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &711851357
 GameObject:
   m_ObjectHideFlags: 0
@@ -24671,6 +24684,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5013296036451910693, guid: 1626eaf3b1d68614c935582df42f3a19,
         type: 3}
+      propertyPath: KBForce
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013296036451910693, guid: 1626eaf3b1d68614c935582df42f3a19,
+        type: 3}
+      propertyPath: KBCounter
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013296036451910693, guid: 1626eaf3b1d68614c935582df42f3a19,
+        type: 3}
       propertyPath: isDashing
       value: 0
       objectReference: {fileID: 0}
@@ -24683,6 +24706,11 @@ PrefabInstance:
         type: 3}
       propertyPath: jumpforce
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013296036451910693, guid: 1626eaf3b1d68614c935582df42f3a19,
+        type: 3}
+      propertyPath: KBTotalTime
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5013296036451910693, guid: 1626eaf3b1d68614c935582df42f3a19,
         type: 3}
