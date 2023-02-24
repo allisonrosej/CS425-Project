@@ -10,13 +10,15 @@ public class Bullet : MonoBehaviour
     public Animator animator; 
 
     public bool hit;
-    private float direction; 
+    private float direction;
+    public Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
         cirCollider = GetComponent<CircleCollider2D>();
-        animator = GetComponent<Animator>(); 
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
         
     }
 
@@ -26,7 +28,8 @@ public class Bullet : MonoBehaviour
         if (hit)
             return;
 
-        float movementSpeed = speed * Time.deltaTime * direction;
+        //rb.velocity = transform.right * speed;
+        float movementSpeed = speed * Time.deltaTime;
         transform.Translate(movementSpeed, 0, 0); 
 
 
@@ -56,12 +59,12 @@ public class Bullet : MonoBehaviour
         hit = false;
         cirCollider.enabled = true;
 
-        float localScaleX = transform.localScale.x;
+       // float localScaleX = transform.localScale.x;
 
-        if (Mathf.Sign(localScaleX) != _direction)
-            localScaleX = -localScaleX;
+      // if (Mathf.Sign(localScaleX) != _direction)
+         //   transform.rotation = new Quaternion(0, 180, 0, 0);
 
-        transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
+        // transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
     }
 
     private void Deactivate()

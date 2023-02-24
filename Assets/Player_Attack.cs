@@ -93,8 +93,10 @@ public class Player_Attack : MonoBehaviour
         animator.SetTrigger("Projectile Attack");
         yield return new WaitForSeconds(time);
         bullets[FindBullets()].transform.position = firePoint.position;
-        bullets[FindBullets()].GetComponent<Bullet>().SetDirection(Mathf.Sign(transform.localScale.x));
+        bullets[FindBullets()].transform.rotation = firePoint.rotation;
 
+        bullets[FindBullets()].GetComponent<Bullet>().SetDirection(Mathf.Sign(transform.localScale.x));
+        
 
         // Fireball object pooling 
 
