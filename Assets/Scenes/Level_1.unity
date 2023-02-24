@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 101975786}
   - component: {fileID: 101975788}
-  - component: {fileID: 101975787}
   m_Layer: 0
   m_Name: Background2 (8)
   m_TagString: Untagged
@@ -149,27 +148,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101975785}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 171.87, y: 0, z: 0}
+  m_LocalPosition: {x: 159.5, y: 0, z: 0}
   m_LocalScale: {x: 1.092513, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1726481182}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &101975787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 101975785}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8af4623d03889c248b0bb030b70abccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 2050063610}
-  parallaxEffect: 0.5
 --- !u!212 &101975788
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -232,7 +217,6 @@ GameObject:
   m_Component:
   - component: {fileID: 107533212}
   - component: {fileID: 107533214}
-  - component: {fileID: 107533213}
   m_Layer: 0
   m_Name: Background3 (5)
   m_TagString: Untagged
@@ -248,27 +232,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107533211}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 79.2, y: 0, z: 0}
+  m_LocalPosition: {x: 79.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 996504895}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &107533213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107533211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8af4623d03889c248b0bb030b70abccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 2050063610}
-  parallaxEffect: 0.3
 --- !u!212 &107533214
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -331,7 +301,6 @@ GameObject:
   m_Component:
   - component: {fileID: 145317754}
   - component: {fileID: 145317756}
-  - component: {fileID: 145317755}
   m_Layer: 0
   m_Name: Background2 (6)
   m_TagString: Untagged
@@ -347,27 +316,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 145317753}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 128.4, y: 0, z: 0}
+  m_LocalPosition: {x: 119.5, y: 0, z: 0}
   m_LocalScale: {x: 1.092513, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1726481182}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &145317755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 145317753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8af4623d03889c248b0bb030b70abccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 2050063610}
-  parallaxEffect: 0.5
 --- !u!212 &145317756
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11915,7 +11870,6 @@ GameObject:
   m_Component:
   - component: {fileID: 189498012}
   - component: {fileID: 189498014}
-  - component: {fileID: 189498013}
   m_Layer: 0
   m_Name: Background3 (12)
   m_TagString: Untagged
@@ -11931,27 +11885,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 189498011}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 213.32, y: 0, z: 0}
+  m_LocalPosition: {x: 219.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 996504895}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &189498013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 189498011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8af4623d03889c248b0bb030b70abccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 2050063610}
-  parallaxEffect: 0.3
 --- !u!212 &189498014
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12014,7 +11954,6 @@ GameObject:
   m_Component:
   - component: {fileID: 250770674}
   - component: {fileID: 250770676}
-  - component: {fileID: 250770675}
   m_Layer: 0
   m_Name: Background3 (8)
   m_TagString: Untagged
@@ -12030,27 +11969,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250770673}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 138.72, y: 0, z: 0}
+  m_LocalPosition: {x: 139.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 996504895}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &250770675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 250770673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8af4623d03889c248b0bb030b70abccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 2050063610}
-  parallaxEffect: 0.3
 --- !u!212 &250770676
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12714,7 +12639,6 @@ GameObject:
   m_Component:
   - component: {fileID: 463497820}
   - component: {fileID: 463497822}
-  - component: {fileID: 463497821}
   m_Layer: 0
   m_Name: Background3 (4)
   m_TagString: Untagged
@@ -12730,27 +12654,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463497819}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 59.29, y: 0, z: 0}
+  m_LocalPosition: {x: 59.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 996504895}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &463497821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 463497819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8af4623d03889c248b0bb030b70abccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 2050063610}
-  parallaxEffect: 0.3
 --- !u!212 &463497822
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12813,7 +12723,6 @@ GameObject:
   m_Component:
   - component: {fileID: 474287460}
   - component: {fileID: 474287462}
-  - component: {fileID: 474287461}
   m_Layer: 0
   m_Name: Background2 (7)
   m_TagString: Untagged
@@ -12829,27 +12738,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474287459}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 150.05, y: 0, z: 0}
+  m_LocalPosition: {x: 139.5, y: 0, z: 0}
   m_LocalScale: {x: 1.092513, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1726481182}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &474287461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 474287459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8af4623d03889c248b0bb030b70abccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 2050063610}
-  parallaxEffect: 0.5
 --- !u!212 &474287462
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12970,7 +12865,6 @@ GameObject:
   m_Component:
   - component: {fileID: 513920358}
   - component: {fileID: 513920360}
-  - component: {fileID: 513920359}
   m_Layer: 0
   m_Name: Background3 (1)
   m_TagString: Untagged
@@ -12986,27 +12880,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513920357}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.57, y: 0, z: 0}
+  m_LocalPosition: {x: 19.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 996504895}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &513920359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 513920357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8af4623d03889c248b0bb030b70abccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 2050063610}
-  parallaxEffect: 0.3
 --- !u!212 &513920360
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13245,7 +13125,6 @@ GameObject:
   m_Component:
   - component: {fileID: 568577227}
   - component: {fileID: 568577229}
-  - component: {fileID: 568577228}
   m_Layer: 0
   m_Name: Background3 (9)
   m_TagString: Untagged
@@ -13261,27 +13140,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 568577226}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 158.2, y: 0, z: 0}
+  m_LocalPosition: {x: 159.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 996504895}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &568577228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 568577226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8af4623d03889c248b0bb030b70abccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 2050063610}
-  parallaxEffect: 0.3
 --- !u!212 &568577229
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13622,7 +13487,6 @@ GameObject:
   m_Component:
   - component: {fileID: 718699977}
   - component: {fileID: 718699979}
-  - component: {fileID: 718699978}
   m_Layer: 0
   m_Name: Background2 (3)
   m_TagString: Untagged
@@ -13638,27 +13502,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718699976}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 63.2, y: 0, z: 0}
+  m_LocalPosition: {x: 59.5, y: 0, z: 0}
   m_LocalScale: {x: 1.092513, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1726481182}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &718699978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 718699976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8af4623d03889c248b0bb030b70abccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 2050063610}
-  parallaxEffect: 0.5
 --- !u!212 &718699979
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14436,7 +14286,6 @@ GameObject:
   m_Component:
   - component: {fileID: 970120696}
   - component: {fileID: 970120698}
-  - component: {fileID: 970120697}
   m_Layer: 0
   m_Name: Background3 (6)
   m_TagString: Untagged
@@ -14452,27 +14301,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 970120695}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 98.9, y: 0, z: 0}
+  m_LocalPosition: {x: 99.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 996504895}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &970120697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 970120695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8af4623d03889c248b0bb030b70abccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 2050063610}
-  parallaxEffect: 0.3
 --- !u!212 &970120698
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14552,7 +14387,7 @@ Transform:
   m_GameObject: {fileID: 996504894}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.4, y: 0.66, z: 0}
-  m_LocalScale: {x: 0.88453966, y: 1.3257025, z: 1}
+  m_LocalScale: {x: 0.8845397, y: 1.3257025, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 513920358}
@@ -15295,7 +15130,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1449516219}
   - component: {fileID: 1449516221}
-  - component: {fileID: 1449516220}
   m_Layer: 0
   m_Name: Background2 (5)
   m_TagString: Untagged
@@ -15311,27 +15145,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1449516218}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 106.76, y: 0, z: 0}
+  m_LocalPosition: {x: 99.5, y: 0, z: 0}
   m_LocalScale: {x: 1.092513, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1726481182}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1449516220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1449516218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8af4623d03889c248b0bb030b70abccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 2050063610}
-  parallaxEffect: 0.5
 --- !u!212 &1449516221
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15707,7 +15527,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1556324445}
   - component: {fileID: 1556324447}
-  - component: {fileID: 1556324446}
   m_Layer: 0
   m_Name: Background3 (10)
   m_TagString: Untagged
@@ -15723,27 +15542,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556324444}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 178.21, y: 0, z: 0}
+  m_LocalPosition: {x: 179.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 996504895}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1556324446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1556324444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8af4623d03889c248b0bb030b70abccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 2050063610}
-  parallaxEffect: 0.3
 --- !u!212 &1556324447
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15806,7 +15611,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1586837800}
   - component: {fileID: 1586837802}
-  - component: {fileID: 1586837801}
   m_Layer: 0
   m_Name: Background3 (2)
   m_TagString: Untagged
@@ -15822,27 +15626,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1586837799}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 39.43, y: 0, z: 0}
+  m_LocalPosition: {x: 39.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 996504895}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1586837801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1586837799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8af4623d03889c248b0bb030b70abccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 2050063610}
-  parallaxEffect: 0.3
 --- !u!212 &1586837802
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16279,7 +16069,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1762620843}
   - component: {fileID: 1762620845}
-  - component: {fileID: 1762620844}
   m_Layer: 0
   m_Name: Background2 (11)
   m_TagString: Untagged
@@ -16295,27 +16084,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1762620842}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 215.55, y: 0, z: 0}
+  m_LocalPosition: {x: 239.5, y: 0, z: 0}
   m_LocalScale: {x: 0.699643, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1726481182}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1762620844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1762620842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8af4623d03889c248b0bb030b70abccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 2050063610}
-  parallaxEffect: 0.5
 --- !u!212 &1762620845
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16703,7 +16478,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1825238693}
   - component: {fileID: 1825238695}
-  - component: {fileID: 1825238694}
   m_Layer: 0
   m_Name: Background2 (9)
   m_TagString: Untagged
@@ -16719,27 +16493,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1825238692}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 188.7617, y: 0, z: 0}
+  m_LocalPosition: {x: 179.5, y: 0, z: 0}
   m_LocalScale: {x: 0.59865755, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1726481182}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1825238694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1825238692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8af4623d03889c248b0bb030b70abccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 2050063610}
-  parallaxEffect: 0.5
 --- !u!212 &1825238695
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17021,7 +16781,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1859326127}
   - component: {fileID: 1859326129}
-  - component: {fileID: 1859326128}
   m_Layer: 0
   m_Name: Background3 (11)
   m_TagString: Untagged
@@ -17037,27 +16796,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1859326126}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 197.94, y: 0, z: 0}
+  m_LocalPosition: {x: 199.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 996504895}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1859326128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1859326126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8af4623d03889c248b0bb030b70abccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 2050063610}
-  parallaxEffect: 0.3
 --- !u!212 &1859326129
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17204,7 +16949,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1904701318}
   - component: {fileID: 1904701320}
-  - component: {fileID: 1904701319}
   m_Layer: 0
   m_Name: Background3 (3)
   m_TagString: Untagged
@@ -17220,27 +16964,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1904701317}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 59.29, y: 0, z: 0}
+  m_LocalPosition: {x: 59.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 996504895}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1904701319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1904701317}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8af4623d03889c248b0bb030b70abccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 2050063610}
-  parallaxEffect: 0.3
 --- !u!212 &1904701320
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17387,7 +17117,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1929948328}
   - component: {fileID: 1929948329}
-  - component: {fileID: 1929948330}
   m_Layer: 0
   m_Name: Background2 (1)
   m_TagString: Untagged
@@ -17403,7 +17132,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1929948327}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.6804, y: 0, z: 0}
+  m_LocalPosition: {x: 19.5, y: 0, z: 0}
   m_LocalScale: {x: 1.0800904, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17462,20 +17191,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1929948330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1929948327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8af4623d03889c248b0bb030b70abccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 2050063610}
-  parallaxEffect: 0.5
 --- !u!1 &1937447711
 GameObject:
   m_ObjectHideFlags: 0
@@ -17532,7 +17247,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1945781752}
   - component: {fileID: 1945781753}
-  - component: {fileID: 1945781754}
   m_Layer: 0
   m_Name: Background2 (2)
   m_TagString: Untagged
@@ -17548,7 +17262,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945781751}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 41.3847, y: 0, z: 0}
+  m_LocalPosition: {x: 39.5, y: 0, z: 0}
   m_LocalScale: {x: 1.092513, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17607,20 +17321,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1945781754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1945781751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8af4623d03889c248b0bb030b70abccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 2050063610}
-  parallaxEffect: 0.5
 --- !u!1 &2009238790
 GameObject:
   m_ObjectHideFlags: 0
@@ -17753,7 +17453,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2014788650}
   - component: {fileID: 2014788652}
-  - component: {fileID: 2014788651}
   m_Layer: 0
   m_Name: Background2 (4)
   m_TagString: Untagged
@@ -17769,27 +17468,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014788649}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 85, y: 0, z: 0}
+  m_LocalPosition: {x: 79.5, y: 0, z: 0}
   m_LocalScale: {x: 1.092513, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1726481182}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2014788651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2014788649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8af4623d03889c248b0bb030b70abccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 2050063610}
-  parallaxEffect: 0.5
 --- !u!212 &2014788652
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17852,7 +17537,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2018657250}
   - component: {fileID: 2018657252}
-  - component: {fileID: 2018657251}
   m_Layer: 0
   m_Name: Background3 (7)
   m_TagString: Untagged
@@ -17868,27 +17552,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2018657249}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 118.78, y: 0, z: 0}
+  m_LocalPosition: {x: 119.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 996504895}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2018657251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2018657249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8af4623d03889c248b0bb030b70abccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 2050063610}
-  parallaxEffect: 0.3
 --- !u!212 &2018657252
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24003,7 +23673,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2073705371}
   - component: {fileID: 2073705373}
-  - component: {fileID: 2073705372}
   m_Layer: 0
   m_Name: Background2 (10)
   m_TagString: Untagged
@@ -24019,27 +23688,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2073705370}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 201.61, y: 0, z: 0}
+  m_LocalPosition: {x: 219.5, y: 0, z: 0}
   m_LocalScale: {x: 0.699643, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1726481182}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2073705372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2073705370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8af4623d03889c248b0bb030b70abccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 2050063610}
-  parallaxEffect: 0.5
 --- !u!212 &2073705373
 SpriteRenderer:
   m_ObjectHideFlags: 0
