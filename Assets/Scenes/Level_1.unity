@@ -24247,6 +24247,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5013296036451910718, guid: 139ecea9807524943994ae02db0ff0a3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 6263134222810060384, guid: 139ecea9807524943994ae02db0ff0a3,
         type: 3}
       propertyPath: bullets.Array.data[0]
