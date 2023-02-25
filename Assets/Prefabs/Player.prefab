@@ -223,10 +223,11 @@ MonoBehaviour:
   canDash: 1
   movementCanDash: 0
   isDashing: 0
-  dashingPower: 125
+  dashingPower: 3
   dashingTime: 0.2
   dashingCooldown: 1
   tr: {fileID: 6263134222810060379}
+  dashDur: 0.15
 --- !u!1839735485 &6263134222810060380
 Tilemap:
   m_ObjectHideFlags: 0
