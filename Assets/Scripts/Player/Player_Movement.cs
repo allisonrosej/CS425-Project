@@ -63,10 +63,11 @@ public class Player_Movement : MonoBehaviour
     public bool canDash = true;
     public bool movementCanDash = true;
     public bool isDashing;
-    public float dashingPower = 125f;
+    public float dashingPower = 3f;
     public float dashingTime = 0.2f;
-    public float dashingCooldown = 1f;
-     [SerializeField] public TrailRenderer tr; 
+    public float dashingCooldown = 0.5f;
+     [SerializeField] public TrailRenderer tr;
+    public float dashDur = 0.15f;
    
 
     // Start is called before the first frame update
@@ -89,22 +90,23 @@ public class Player_Movement : MonoBehaviour
         UpdateMovementStates();
         BetterJump();
         Jump();
+        Dash();
 
-        if (!Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
-        {
-            movementCanDash = false;
-        }
+        //if (!Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
+        //{
+        //    movementCanDash = false;
+        //}
 
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D));
-        {
-            movementCanDash = true;
-        }
+        //if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D));
+        //{
+        //    movementCanDash = true;
+        //}
         
-        Dash();  
-        if (Input.GetKeyDown(KeyCode.X) && canDash && movementCanDash)
-        {
-            StartCoroutine(Dash()); // This need to change
-        }
+        //Dash();  
+        //if (Input.GetKeyDown(KeyCode.X) && canDash && movementCanDash)
+        //{
+        //    StartCoroutine(Dash()); // This need to change
+        //}
         
     }
 
@@ -361,24 +363,54 @@ public class Player_Movement : MonoBehaviour
         }
     }
 
-    IEnumerator Dash() 
+    //IEnumerator Dash() 
+    //{
+
+
+    //    canDash = false;
+    //    isDashing = true;
+    //    float originalGravity = rb.gravityScale; // allows player not to be affected by gravity
+    //    rb.gravityScale = 0f; // sets gravity to zero
+    //    rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+    //    tr.emitting = true; //display trail (IDK if we want this)
+    //    yield return new WaitForSeconds(dashingTime); // stops the player from dashing forever
+    //    tr.emitting = false; // stops displaying the trail render ( animation tail following the character)
+    //    rb.gravityScale = originalGravity;  // sets the gravity to og scale
+    //    isDashing = false; // stops dashing
+    //    yield return new WaitForSeconds(dashingCooldown); // allows a dash cooldown
+    //    canDash = true; // player can dash again after cooldown is done
+
+
+    //}
+
+    void Dash()
     {
-       
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            if (!canDash)
+                return;
 
-        canDash = false;
-        isDashing = true;
-        float originalGravity = rb.gravityScale; // allows player not to be affected by gravity
-        rb.gravityScale = 0f; // sets gravity to zero
-        rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
-        tr.emitting = true; //display trail (IDK if we want this)
-        yield return new WaitForSeconds(dashingTime); // stops the player from dashing forever
-        tr.emitting = false; // stops displaying the trail render ( animation tail following the character)
-        rb.gravityScale = originalGravity;  // sets the gravity to og scale
-        isDashing = false; // stops dashing
-        yield return new WaitForSeconds(dashingCooldown); // allows a dash cooldown
-        canDash = true; // player can dash again after cooldown is done
+            if (horizontalDir != 0 && canDash)
+            {
+                StartCoroutine(Dashing());
+            }
+        }
 
-         
     }
-   
+
+    IEnumerator Dashing()
+    {
+        canDash = false;
+        currentSpeed = currentSpeed * dashingPower;
+        rb.gravityScale = 0f;
+        rb.velocity = new Vector2(rb.velocity.x, 0);
+        yield return new WaitForSeconds(dashDur);
+
+
+        rb.gravityScale = gravity;
+        currentSpeed = currentSpeed / dashingPower;
+        yield return new WaitForSeconds(dashingCooldown - dashDur);
+        canDash = true;
+
+    }
 }
