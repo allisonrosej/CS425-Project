@@ -69,7 +69,7 @@ public class Player_Attack : MonoBehaviour
         {
             //Debug.Log("We hit " + enemy.name); 
 
-            //enemy.GetComponent<TestEnemy>().TakeDamage(attackDamage);
+            enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
         }
 
 

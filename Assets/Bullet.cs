@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour
     public bool hit;
     private float direction;
     public Rigidbody2D rb;
-
+    private EnemyHealth enemyHealth;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,8 +43,8 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
            // TestEnemy enemy;
-            //enemy = collision.GetComponent<TestEnemy>();
-            //enemy.TakeDamage(3);
+            enemyHealth = collision.GetComponent<EnemyHealth>();
+            enemyHealth.TakeDamage(3);
         }
 
 

@@ -73,9 +73,12 @@ public class Health : MonoBehaviour
             //Death animation
             LevelManager.instance.GameOver();
             gameObject.SetActive(false);
+            
         }
+        if (health > 0)
+            StartCoroutine(BecomeTemporarilyInvincible());
 
-        StartCoroutine(BecomeTemporarilyInvincible());
+
 
     }
 
