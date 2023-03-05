@@ -20,31 +20,37 @@ public class EnemyScout : MonoBehaviour
     {
         initScale = enemy.localScale;
         anim = GetComponentInChildren<Animator>();
+        enemy.transform.rotation = new Quaternion(0, 180, 0, 0);
 
     }
     private void Update()
     {
-        //if (movingLeft)
-        //{
-        //    if (enemy.position.x >= leftEdge.position.x)
-        //        MoveInDirection(-1);
-        //    else
-        //    {
-        //        // change direction
-        //        ChangeDirection();
-        //    }
-        //}
-        //else
-        //{
-        //    if (enemy.position.x <= leftEdge.position.x)
-        //        MoveInDirection(1);
-        //    else
-        //    {
-        //        // change direction
-        //        ChangeDirection();
-        //    }
-        //}
-        MoveInDirection(1);
+        if (movingLeft)
+        {
+            if (enemy.position.x >= leftEdge.position.x)
+            {
+                MoveInDirection(-1);
+
+            }
+
+            else
+            {
+                // change direction
+                ChangeDirection();
+            }
+        }
+        else
+        {
+            if (enemy.position.x <= rightEdge.position.x)
+            {
+                MoveInDirection(1);
+            }
+            else
+            {
+                // change direction
+                ChangeDirection();
+            }
+        }
         
     }
 
@@ -52,14 +58,14 @@ public class EnemyScout : MonoBehaviour
     {
         anim.SetBool("isWalking", false);
 
-        //idleTimer += Time.deltaTime;
+        idleTimer += Time.deltaTime;
         
-        //if (idleTimer > idleDur)
+        if (idleTimer > idleDur)
             movingLeft = !movingLeft;
     }
     private void MoveInDirection(int _direction)
     {
-        //idleTimer = 0;
+        idleTimer = 0;
         anim.SetBool("isWalking", true);
         // make enemy face direction 
         enemy.localScale = new Vector3(Mathf.Abs(initScale.x) * _direction, initScale.y, initScale.z);

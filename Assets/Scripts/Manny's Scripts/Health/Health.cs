@@ -9,12 +9,15 @@ public class Health : MonoBehaviour
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
+    private Animator anim; 
+
 
     // Leo's code for iframes. This variable keeps track if player is invincible
     private bool isInvincible = false;
 
     [SerializeField]
     private float invincibilityDurationSeconds;
+
 
     // Leo's code for iframes
     public IEnumerator BecomeTemporarilyInvincible()
@@ -27,6 +30,10 @@ public class Health : MonoBehaviour
         Debug.Log("Player is no longer invincible!");
     }
 
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     private void Update()
     {
@@ -71,12 +78,17 @@ public class Health : MonoBehaviour
         if (health <= 0)
         {
             //Death animation
+            anim.SetTrigger("Die");
             LevelManager.instance.GameOver();
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
             
         }
         if (health > 0)
+        {
+            anim.SetTrigger("Hurt");
             StartCoroutine(BecomeTemporarilyInvincible());
+        }
+            
 
 
 
