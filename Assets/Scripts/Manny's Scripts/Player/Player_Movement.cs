@@ -122,6 +122,7 @@ public class Player_Movement : MonoBehaviour
     void Animation()
     {
         animator.SetBool("isWalking", isWalking);
+        animator.SetBool("isWallSliding", isSliding);
     }
     void GetComponents()
     {
@@ -211,6 +212,7 @@ public class Player_Movement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            animator.SetTrigger("isJumping");
             Debug.Log("Jump");
             if (!isSliding)
             {
@@ -392,6 +394,7 @@ public class Player_Movement : MonoBehaviour
 
             if (horizontalDir != 0 && canDash)
             {
+                animator.SetTrigger("Dash");
                 StartCoroutine(Dashing());
             }
         }
