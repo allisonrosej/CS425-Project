@@ -17,6 +17,8 @@ public class SoundManager : MonoBehaviour
 
     void Update()
     {
+        int jumpCounter = 0;
+
         if (player.horizontalDir != 0 && player.canMove && !player.isInAir)
         {
             footstepsSound.enabled = true;
@@ -26,16 +28,14 @@ public class SoundManager : MonoBehaviour
             footstepsSound.enabled = false;
         }
 
-
-        if (player.isInAir)
+        
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            jumpSound.enabled = true;
-        }
-        else
-        {
-            jumpSound.enabled = false;
+            jumpSound.Play();
         }
 
+
+        
 
     }
 }
