@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     public int health;
@@ -65,6 +66,9 @@ public class Health : MonoBehaviour
                 hearts[i].sprite = emptyHeart;
             }
         }
+
+        
+
     }
 
     public void TakeDamage(int damage)
@@ -80,6 +84,7 @@ public class Health : MonoBehaviour
             //Death animation
             anim.SetTrigger("Die");
             LevelManager.instance.GameOver();
+            
             //gameObject.SetActive(false);
             
         }

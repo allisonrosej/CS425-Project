@@ -9,5 +9,6 @@ public class UIManager : MonoBehaviour
     public void ToggleDeathPanel()
     {
         DeathPanel.SetActive(!DeathPanel.activeSelf);
+        
     }
 }

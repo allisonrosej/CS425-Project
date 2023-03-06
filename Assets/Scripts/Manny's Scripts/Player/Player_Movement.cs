@@ -7,8 +7,8 @@ public class Player_Movement : MonoBehaviour
 {
     [Header("Movement Settings")]
     public float currentSpeed = 350f;
-    private float horizontalDir;
-    private bool canMove = true;
+    public float horizontalDir;
+    public bool canMove = true;
     public float gravity = 6f;
 
     [Header("Jump Settings")]
@@ -68,7 +68,8 @@ public class Player_Movement : MonoBehaviour
     public float dashingCooldown = 0.5f;
      [SerializeField] public TrailRenderer tr;
     public float dashDur = 0.15f;
-   
+
+    public PauseMenu pauseMenuCheck;
 
     // Start is called before the first frame update
     void Start()
@@ -76,6 +77,7 @@ public class Player_Movement : MonoBehaviour
         GetComponents();
 
         rb.gravityScale = gravity;
+        
     }
 
     // Update is called once per frame
