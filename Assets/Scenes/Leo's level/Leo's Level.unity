@@ -42401,6 +42401,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6307418947796126056, guid: 5b77aded4ce43be4d81235d695610004,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.5024567
+      objectReference: {fileID: 0}
+    - target: {fileID: 6307418947796126056, guid: 5b77aded4ce43be4d81235d695610004,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.5024567
+      objectReference: {fileID: 0}
+    - target: {fileID: 6307418947796126056, guid: 5b77aded4ce43be4d81235d695610004,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.013221741
+      objectReference: {fileID: 0}
+    - target: {fileID: 6307418947796126056, guid: 5b77aded4ce43be4d81235d695610004,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.17189384
+      objectReference: {fileID: 0}
     - target: {fileID: 6307418947796126057, guid: 5b77aded4ce43be4d81235d695610004,
         type: 3}
       propertyPath: m_CollisionDetection
@@ -42416,6 +42436,42 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6307418947796126069, guid: 5b77aded4ce43be4d81235d695610004,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 6307418947796126069, guid: 5b77aded4ce43be4d81235d695610004,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 6307418947796126069, guid: 5b77aded4ce43be4d81235d695610004,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5f92406fb2bab9f4a9f8ad8fd1a9c30a,
+        type: 3}
+    - target: {fileID: 6307418947796126069, guid: 5b77aded4ce43be4d81235d695610004,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6307418947796126069, guid: 5b77aded4ce43be4d81235d695610004,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6307418947796126069, guid: 5b77aded4ce43be4d81235d695610004,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6307418947796126069, guid: 5b77aded4ce43be4d81235d695610004,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6307418947796126070, guid: 5b77aded4ce43be4d81235d695610004,
         type: 3}
       propertyPath: m_RootOrder
@@ -42429,7 +42485,7 @@ PrefabInstance:
     - target: {fileID: 6307418947796126070, guid: 5b77aded4ce43be4d81235d695610004,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.62
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 6307418947796126070, guid: 5b77aded4ce43be4d81235d695610004,
         type: 3}
@@ -42478,6 +42534,32 @@ PrefabInstance:
       objectReference: {fileID: 1667039407}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b77aded4ce43be4d81235d695610004, type: 3}
+--- !u!1 &6307418946724819513 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6307418947796126067, guid: 5b77aded4ce43be4d81235d695610004,
+    type: 3}
+  m_PrefabInstance: {fileID: 6307418946724819512}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6307418946724819514
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6307418946724819513}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4a4303bb2e7da46ba91158d4675a7b69, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &7816806469578502218
 PrefabInstance:
   m_ObjectHideFlags: 0
