@@ -15,17 +15,14 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        float moveX = Input.GetAxis("Horizontal");
-
-        animator.SetFloat("moveX", moveX);
-
-        bool isMoving = Mathf.Approximately(moveX, 0f);
+       
 
     }
 
@@ -44,14 +41,15 @@ public class Enemy : MonoBehaviour
             // If player is on the left, hit from right side
             if (collision.transform.position.x <= transform.position.x)
             {
-                playerMovement.KnockFromRight = true;
+                //playerMovement.KnockFromRight = true;
             }
 
             if (collision.transform.position.x > transform.position.x)
             {
-                playerMovement.KnockFromRight = false;
+                //playerMovement.KnockFromRight = false;
             }
 
+            animator.SetTrigger("Attack");
             health.TakeDamage(1);
         }
     }
