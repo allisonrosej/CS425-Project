@@ -29,10 +29,10 @@ public class SoundManager : MonoBehaviour
         }
 
         
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    jumpSound.Play();
-        //}
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            jumpSound.Play();
+        }
 
 
         
