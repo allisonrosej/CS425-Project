@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 262.302, g: 324.99048, b: 430.14307, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -42404,22 +42404,27 @@ PrefabInstance:
     - target: {fileID: 6307418947796126056, guid: 5b77aded4ce43be4d81235d695610004,
         type: 3}
       propertyPath: m_Size.x
-      value: 1.5024567
+      value: 1.6723747
       objectReference: {fileID: 0}
     - target: {fileID: 6307418947796126056, guid: 5b77aded4ce43be4d81235d695610004,
         type: 3}
       propertyPath: m_Size.y
-      value: 1.5024567
+      value: 1.7856547
       objectReference: {fileID: 0}
     - target: {fileID: 6307418947796126056, guid: 5b77aded4ce43be4d81235d695610004,
         type: 3}
       propertyPath: m_Offset.x
-      value: -0.013221741
+      value: -0.079301834
       objectReference: {fileID: 0}
     - target: {fileID: 6307418947796126056, guid: 5b77aded4ce43be4d81235d695610004,
         type: 3}
       propertyPath: m_Offset.y
-      value: 0.17189384
+      value: 0.33237273
+      objectReference: {fileID: 0}
+    - target: {fileID: 6307418947796126057, guid: 5b77aded4ce43be4d81235d695610004,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6307418947796126057, guid: 5b77aded4ce43be4d81235d695610004,
         type: 3}
@@ -42532,6 +42537,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1667039407}
+    - target: {fileID: 6307418947796126071, guid: 5b77aded4ce43be4d81235d695610004,
+        type: 3}
+      propertyPath: distanceToAttackPlayer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b77aded4ce43be4d81235d695610004, type: 3}
 --- !u!1 &6307418946724819513 stripped
@@ -42560,6 +42570,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6307418946724819520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6307418946724819513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f46f747d3ce477e46b24dc9ce69788d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 10
+  currentHealth: 0
+  iFrameDur: 1
+  numOfFlashes: 3
+--- !u!114 &6307418946724819521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6307418946724819513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e7ec8aea69ff74ca95283fd6380e33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovement: {fileID: 0}
+  health: {fileID: 0}
+  animator: {fileID: 6307418946724819514}
 --- !u!1001 &7816806469578502218
 PrefabInstance:
   m_ObjectHideFlags: 0
