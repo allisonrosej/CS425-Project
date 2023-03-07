@@ -17,7 +17,7 @@ public class SoundManager : MonoBehaviour
 
     void Update()
     {
-        int jumpCounter = 0;
+        //int jumpCounter = 0;
 
         if (player.horizontalDir != 0 && player.canMove && !player.isInAir)
         {
@@ -29,10 +29,10 @@ public class SoundManager : MonoBehaviour
         }
 
         
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            jumpSound.Play();
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    jumpSound.Play();
+        //}
 
 
         
