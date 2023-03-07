@@ -21,7 +21,12 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        float moveX = Input.GetAxis("Horizontal");
+
+        animator.SetFloat("moveX", moveX);
+
+        bool isMoving = Mathf.Approximately(moveX, 0f);
+
     }
 
     // If player collides with enemy, knockback and deal 1 damage
