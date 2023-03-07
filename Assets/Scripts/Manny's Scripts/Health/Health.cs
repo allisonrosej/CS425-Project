@@ -57,6 +57,10 @@ public class Health : MonoBehaviour
         for (int i = 0; i < hearts.Length; i++)
         {
             //if i less than health than make sprite full heart
+            if (health >= 5)
+            {
+                health = 5;
+            }
             if (i < health)
             {
                 hearts[i].sprite = fullHeart;
