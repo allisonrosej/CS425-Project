@@ -5,10 +5,12 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
-    // Talks to Player_Movement script
-    public Player_Movement playerMovement;
     // Talks to Health script 
-    public Health health;
+    public Health playerHealth;
+
+    public int damage;
+    private float coolDownTimer = Mathf.Infinity;
+    public float attackCoolDown;
 
     public Animator animator; 
 
@@ -16,13 +18,14 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        coolDownTimer += Time.deltaTime;
+
 
     }
 
@@ -32,11 +35,17 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
 
-           
-            //health = collision.GetComponent<Health>();
+
+
+            if (coolDownTimer >= attackCoolDown)
+            {
+                coolDownTimer = 0;
+                animator.SetTrigger("Attack");
+                playerHealth.TakeDamage(damage);
+            }
 
             // Resets KBCounter to be equal to KBTotalTime
-            playerMovement.KBCounter = playerMovement.KBTotalTime;
+            //playerMovement.KBCounter = playerMovement.KBTotalTime;
 
             // If player is on the left, hit from right side
             if (collision.transform.position.x <= transform.position.x)
@@ -49,8 +58,8 @@ public class Enemy : MonoBehaviour
                 //playerMovement.KnockFromRight = false;
             }
 
-            animator.SetTrigger("Attack");
-            health.TakeDamage(1);
+            //animator.SetTrigger("Attack");
+            
         }
     }
 

@@ -36,6 +36,7 @@ public class EnemyHealth : MonoBehaviour
         {
             // Enemy dies
             anim.SetTrigger("Die");
+            
         }
     }
 
