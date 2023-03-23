@@ -133,6 +133,16 @@ public class Player_Movement : MonoBehaviour
         animator = GetComponent<Animator>();
 
     }
+    void DisableMovement()
+    {
+        canMove = false;
+        rb.velocity = new Vector2(0, 0);
+    }
+
+    void EnableMovement()
+    {
+        canMove = true;
+    }
 
     void Movement()
     {
