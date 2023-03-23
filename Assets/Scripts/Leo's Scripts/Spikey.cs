@@ -16,7 +16,7 @@ public class Spikey : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerHealth = GameObject.Find("health").GetComponent<Health>();
+        playerHealth = GameObject.Find("Player").GetComponent<Health>();
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -24,7 +24,7 @@ public class Spikey : MonoBehaviour
         GameObject whatHit = col.gameObject;
         if (whatHit.CompareTag("Player"))
         {
-            this.playerHealth.TakeDamage(5);
+            playerHealth.TakeDamage(5);
         }
     }
 

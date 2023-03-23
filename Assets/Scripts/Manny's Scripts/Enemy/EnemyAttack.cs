@@ -26,7 +26,7 @@ public class EnemyAttack : MonoBehaviour
         coolDownTimer += Time.deltaTime;
         if (PlayerInSight())
         {
-            if (coolDownTimer >= attackCoolDown)
+            if (coolDownTimer >= attackCoolDown && !playerHealth.playerdead)
             {
                 coolDownTimer = 0;
                 anim.SetTrigger("Attack");

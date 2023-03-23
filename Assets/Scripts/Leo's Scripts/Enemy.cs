@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
 
 
 
-            if (coolDownTimer >= attackCoolDown)
+            if (coolDownTimer >= attackCoolDown && !playerHealth.playerdead)
             {
                 coolDownTimer = 0;
                 animator.SetTrigger("Attack");
