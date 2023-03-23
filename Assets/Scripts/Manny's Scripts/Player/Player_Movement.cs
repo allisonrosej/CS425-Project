@@ -70,6 +70,7 @@ public class Player_Movement : MonoBehaviour
     public float dashDur = 0.15f;
 
     public PauseMenu pauseMenuCheck;
+    private CoyoteTime coyoteTime;
 
     // Start is called before the first frame update
     void Start()
@@ -131,6 +132,7 @@ public class Player_Movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         capCol = GetComponent<CapsuleCollider2D>();
         animator = GetComponent<Animator>();
+        coyoteTime = GetComponent<CoyoteTime>();
 
     }
     void DisableMovement()
@@ -228,7 +230,8 @@ public class Player_Movement : MonoBehaviour
             Debug.Log("Jump");
             if (!isSliding)
             {
-                if (!isInAir) GroundJump();
+                if (isGrounded || (coyoteTime.CanCoyoteJump())) 
+                    GroundJump();
                 else AirJump();
             }
             else
