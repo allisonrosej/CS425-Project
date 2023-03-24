@@ -12,6 +12,7 @@ public class Health : MonoBehaviour
     public Sprite emptyHeart;
     private Animator anim;
     public bool playerdead;
+    private Player_Movement player;
 
     // Leo's code for iframes. This variable keeps track if player is invincible
     private bool isInvincible = false;
@@ -34,6 +35,7 @@ public class Health : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
+        player = GetComponent<Player_Movement>();
         playerdead = false;
     }
 
@@ -87,6 +89,7 @@ public class Health : MonoBehaviour
         if (health <= 0)
         {
             playerdead = true;
+            player.pauseInput = true;
             //Death animation
             anim.SetTrigger("Die");
             LevelManager.instance.GameOver();

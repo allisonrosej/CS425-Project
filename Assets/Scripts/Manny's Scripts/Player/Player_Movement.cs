@@ -54,7 +54,7 @@ public class Player_Movement : MonoBehaviour
     // private members
     private string groundTag = "Ground";
     private string wallTag = "Ground";
-    private bool pauseInput = false;
+    public bool pauseInput = false;
     private Rigidbody2D rb;
     private CapsuleCollider2D capCol;
     private Animator animator;
