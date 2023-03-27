@@ -43,16 +43,17 @@ public class Follow : MonoBehaviour
         if (foundPlayer)
         {
 
-            float step;
+            // remove = ratio if uncommenting code below
+            float step = ratio;
 
-            if (Vector3.Dot(target.transform.position - transform.position, target.transform.localScale.x * Vector3.right) > 0)
-            {
-                step = ratio * 2;
-            }
-            else
-            {
-                step = ratio;
-            }
+            //if (Vector3.Dot(target.transform.position - transform.position, target.transform.localScale.x * Vector3.right) > 0)
+            //{
+             //   step = ratio * 2;
+           // }
+            //else
+            //{
+               // step = ratio;
+            //}
 
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
 
