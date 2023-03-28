@@ -146,6 +146,16 @@ public class Player_Movement : MonoBehaviour
         canMove = true;
     }
 
+    void DisableInput()
+    {
+        pauseInput = true;
+    }
+
+    public void EnableInput()
+    {
+        pauseInput = false;
+    }
+
     void Movement()
     {
         if (!canMove)
