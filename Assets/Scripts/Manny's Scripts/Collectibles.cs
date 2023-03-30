@@ -10,10 +10,12 @@ public class Collectibles : MonoBehaviour
     public int coinCount = 0;
     public Health player;
     public TextMeshProUGUI coinText;
+    private Animator anim;
 
     private void Start()
     {
         SetCountText();
+        anim = GetComponent<Animator>();
     }
     private void Update()
     {
@@ -27,7 +29,9 @@ public class Collectibles : MonoBehaviour
         if (collision.gameObject.CompareTag("Mushroom"))
         {
             mushroomCount += 1;
+            anim.SetTrigger("Dance");
             collision.gameObject.SetActive(false);
+
         }
 
         if (collision.gameObject.CompareTag("Coin"))
