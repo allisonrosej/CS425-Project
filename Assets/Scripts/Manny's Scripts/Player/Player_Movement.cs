@@ -72,7 +72,8 @@ public class Player_Movement : MonoBehaviour
     public PauseMenu pauseMenuCheck;
     private CoyoteTime coyoteTime;
 
-    public bool demo; 
+    public bool demo;
+    private int jumps; 
 
     // Start is called before the first frame update
     void Start()
@@ -245,7 +246,7 @@ public class Player_Movement : MonoBehaviour
             Debug.Log("Jump");
             if (!isSliding)
             {
-                if (isGrounded || (coyoteTime.CanCoyoteJump()) && !isInAir) 
+                if ((isGrounded || (coyoteTime.CanCoyoteJump())) && jumps < 1 ) 
                     GroundJump();
                 else AirJump();
             }
@@ -259,6 +260,7 @@ public class Player_Movement : MonoBehaviour
     void GroundJump()
     {
         rb.velocity = Vector2.up * jumpForce;
+        jumps++;
         isInAir = true;
         canMove = true;
     }
@@ -344,6 +346,7 @@ public class Player_Movement : MonoBehaviour
         if (ray.collider != null)
         {
             isGrounded = true;
+            
         }
         else
         {
@@ -390,6 +393,7 @@ public class Player_Movement : MonoBehaviour
             {
                 isInAir = false;
                 currentJumps = 0;
+                jumps = 0;
                 isFalling = false;
             }
         }
