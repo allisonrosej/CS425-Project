@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 5512052578060441366}
   - component: {fileID: 8214565704267169300}
   - component: {fileID: 2901803736761839201}
-  - component: {fileID: 2894572463356680661}
   - component: {fileID: 4467373559507552621}
   m_Layer: 9
   m_Name: Bear
@@ -103,9 +102,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8b9d5216c464b342b9da8feff3b3444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 7816806470136017125, guid: 1626eaf3b1d68614c935582df42f3a19, type: 3}
-  speed: 3
+  player: {fileID: 0}
+  speed: 1.5
   distanceToAttackPlayer: 10
+  animator: {fileID: 0}
 --- !u!70 &5512052578060441367
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -119,8 +119,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.079301834, y: 0.33237273}
-  m_Size: {x: 1.6723747, y: 1.7856547}
+  m_Offset: {x: 0.04207152, y: 0.04548955}
+  m_Size: {x: 1.60617, y: 2.0946064}
   m_Direction: 0
 --- !u!50 &5512052578060441366
 Rigidbody2D:
@@ -137,7 +137,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 10
   m_Material: {fileID: 0}
   m_Interpolate: 1
   m_SleepingMode: 0
@@ -179,22 +179,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2894572463356680661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5512052578060441356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f46f747d3ce477e46b24dc9ce69788d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 10
-  currentHealth: 0
-  iFrameDur: 1
-  numOfFlashes: 3
 --- !u!114 &4467373559507552621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37e7ec8aea69ff74ca95283fd6380e33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMovement: {fileID: 0}
-  health: {fileID: 0}
+  playerHealth: {fileID: 0}
+  damage: 2
+  attackCoolDown: 2
   animator: {fileID: 2901803736761839201}
