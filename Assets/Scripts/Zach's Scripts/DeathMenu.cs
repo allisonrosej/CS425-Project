@@ -24,5 +24,6 @@ public class DeathMenu : MonoBehaviour
     public void deathMainMenuButton()
     {
         SceneManager.LoadScene("Main Menu");
+        GameObject.FindGameObjectWithTag("menuMusicTag").GetComponent<menuSoundDoNotDestroy>().GetComponent<AudioSource>().Play(); //starts menu music
     }
 }

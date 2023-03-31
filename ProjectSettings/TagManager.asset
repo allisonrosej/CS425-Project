@@ -9,6 +9,7 @@ TagManager:
   - Mushroom
   - Coin
   - Heart
+  - menuMusicTag
   layers:
   - Default
   - TransparentFX

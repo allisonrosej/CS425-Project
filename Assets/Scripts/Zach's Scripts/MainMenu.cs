@@ -13,7 +13,9 @@ public class MainMenu : MonoBehaviour
 
     public void playButton()
     {
+        GameObject.FindGameObjectWithTag("menuMusicTag").GetComponent<menuSoundDoNotDestroy>().GetComponent<AudioSource>().Stop(); //stops menu music
         SceneManager.LoadScene("Level_1");
+
     }
 
     public void optionsButton()

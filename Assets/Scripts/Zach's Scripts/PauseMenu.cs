@@ -27,6 +27,7 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
         Time.timeScale = 1f;
         isGamePaused = false;
+        GameObject.FindGameObjectWithTag("menuMusicTag").GetComponent<menuSoundDoNotDestroy>().GetComponent<AudioSource>().Play(); //starts menu music 
     }
 
     public void pauseExitGameButton(){
