@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 261.80054, g: 324.32776, b: 429.24692, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -17390,9 +17390,9 @@ GameObject:
   - component: {fileID: 746879302}
   - component: {fileID: 746879303}
   - component: {fileID: 746879304}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ghost
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17517,7 +17517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f46f747d3ce477e46b24dc9ce69788d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 10
+  startingHealth: 5
   currentHealth: 0
   iFrameDur: 1
   numOfFlashes: 3
@@ -35127,6 +35127,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463611515750437349, guid: 1626eaf3b1d68614c935582df42f3a19,
+        type: 3}
+      propertyPath: attackRange
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8463611515750437349, guid: 1626eaf3b1d68614c935582df42f3a19,
         type: 3}

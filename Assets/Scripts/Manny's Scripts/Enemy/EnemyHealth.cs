@@ -61,4 +61,9 @@ public class EnemyHealth : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+    private void RedAnimation()
+    {
+        spriteRen.color = new Color(1, 0, 0, 0.5f);
+    }
 }
