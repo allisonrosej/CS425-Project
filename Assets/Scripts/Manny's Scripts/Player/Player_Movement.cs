@@ -66,6 +66,8 @@ public class Player_Movement : MonoBehaviour
     public float dashingPower = 3f;
     public float dashingTime = 0.2f;
     public float dashingCooldown = 0.5f;
+    public GameObject dashSmokePrefab;
+    private GameObject dashSmoke;
      [SerializeField] public TrailRenderer tr;
     public float dashDur = 0.15f;
 
@@ -81,6 +83,8 @@ public class Player_Movement : MonoBehaviour
         GetComponents();
 
         rb.gravityScale = gravity;
+        //dashSmoke = Instantiate(dashSmokePrefab, transform);
+        dashSmokePrefab.SetActive(false);
         
     }
 
@@ -429,6 +433,7 @@ public class Player_Movement : MonoBehaviour
             if (horizontalDir != 0 && canDash)
             {
                 animator.SetTrigger("Dash");
+                dashSmokePrefab.SetActive(true);
                 StartCoroutine(Dashing());
             }
         }
@@ -442,12 +447,12 @@ public class Player_Movement : MonoBehaviour
         rb.gravityScale = 0f;
         rb.velocity = new Vector2(rb.velocity.x, 0);
         yield return new WaitForSeconds(dashDur);
-
+        //dashSmoke.SetActive(false);
 
         rb.gravityScale = gravity;
         currentSpeed = currentSpeed / dashingPower;
         yield return new WaitForSeconds(dashingCooldown - dashDur);
         canDash = true;
-
+      
     }
 }
