@@ -21,16 +21,22 @@ public class Player_Attack : MonoBehaviour
 
     public GameObject[] bullets;
     public float time = 0.5f;
+    private Player_Movement player;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        player = GetComponent<Player_Movement>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (player.pauseInput)
+            return;
+        if (player.demo)
+            return; 
+
         if (Time.time >= nextAttackTime)
         {
             if (Input.GetKeyDown(KeyCode.J))

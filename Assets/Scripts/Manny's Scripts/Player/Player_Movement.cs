@@ -72,6 +72,8 @@ public class Player_Movement : MonoBehaviour
     public PauseMenu pauseMenuCheck;
     private CoyoteTime coyoteTime;
 
+    public bool demo; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -84,6 +86,9 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (demo)
+            return;
+
         if (pauseInput)
             return;
 
