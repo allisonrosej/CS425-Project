@@ -11,6 +11,7 @@ public class Collectibles : MonoBehaviour
     public Health player;
     public TextMeshProUGUI coinText;
     private Animator anim;
+    public AudioSource coinCollectSound;
 
     private void Start()
     {
@@ -39,6 +40,8 @@ public class Collectibles : MonoBehaviour
             coinCount += 1;
             collision.gameObject.SetActive(false);
             SetCountText();
+            coinCollectSound.Play();
+
         }
 
         if (collision.gameObject.CompareTag("Heart"))

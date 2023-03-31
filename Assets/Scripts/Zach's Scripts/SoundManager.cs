@@ -13,7 +13,6 @@ public class SoundManager : MonoBehaviour
     public AudioSource projectileAttackSound;
     public AudioSource takeDamageSound;
     public AudioSource dashSound;
-    public AudioSource coinCollectSound;
     public AudioSource mushroomCollectSound;
     public AudioSource buttonHoverSound;
     public AudioSource buttonClickSound;
