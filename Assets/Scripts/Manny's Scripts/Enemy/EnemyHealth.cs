@@ -52,7 +52,7 @@ public class EnemyHealth : MonoBehaviour
             spriteRen.color = Color.white;
             yield return new WaitForSeconds(iFrameDur / (numOfFlashes * 2));
         }
-        Physics2D.IgnoreLayerCollision(10, 9, true);
+        Physics2D.IgnoreLayerCollision(10, 9, false);
 
 
     }
