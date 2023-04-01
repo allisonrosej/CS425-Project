@@ -75,7 +75,11 @@ public class Player_Movement : MonoBehaviour
     private CoyoteTime coyoteTime;
 
     public bool demo;
-    private int jumps; 
+    private int jumps;
+
+    public AudioSource jumpSound;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -267,6 +271,7 @@ public class Player_Movement : MonoBehaviour
         jumps++;
         isInAir = true;
         canMove = true;
+        jumpSound.Play();
     }
 
     void AirJump()
@@ -278,6 +283,7 @@ public class Player_Movement : MonoBehaviour
         rb.velocity = new Vector2(0, 0);
         rb.velocity = Vector2.up * jumpForce;
         currentJumps++; // increment jumps to make sure it not over MaxAirJumps
+        jumpSound.Play();
     }
 
     async void WallJump()
