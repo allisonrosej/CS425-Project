@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1447662439929994813}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.54, y: 0, z: 0}
+  m_LocalPosition: {x: 0.73, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 1447662441171348677}
   - component: {fileID: 1447662441171348676}
   m_Layer: 0
-  m_Name: Patrol
+  m_Name: Ozze Patrol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,7 +87,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1447662441171348730}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44.17, y: 0.62, z: 0}
+  m_LocalPosition: {x: 183.8, y: 4.7, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -114,7 +114,6 @@ MonoBehaviour:
   enemy: {fileID: 1447662441084950641}
   speed: 2
   movingLeft: 1
-  anim: {fileID: 0}
   idleDur: 2
   idleTimer: 0
 --- !u!1001 &1117412891948171713
@@ -133,16 +132,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1988049287334353328, guid: 52dc4ba7a8aed8a478a46fa60e6f55b7,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1988049287334353328, guid: 52dc4ba7a8aed8a478a46fa60e6f55b7,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1988049287334353328, guid: 52dc4ba7a8aed8a478a46fa60e6f55b7,
         type: 3}
@@ -193,36 +182,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1988049287334353329, guid: 52dc4ba7a8aed8a478a46fa60e6f55b7,
-        type: 3}
-      propertyPath: range
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1988049287334353331, guid: 52dc4ba7a8aed8a478a46fa60e6f55b7,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.35895976
-      objectReference: {fileID: 0}
-    - target: {fileID: 1988049287334353331, guid: 52dc4ba7a8aed8a478a46fa60e6f55b7,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: -0.016181171
-      objectReference: {fileID: 0}
-    - target: {fileID: 1988049287334353331, guid: 52dc4ba7a8aed8a478a46fa60e6f55b7,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: 0.073765606
-      objectReference: {fileID: 0}
-    - target: {fileID: 1988049287334353331, guid: 52dc4ba7a8aed8a478a46fa60e6f55b7,
-        type: 3}
-      propertyPath: m_UsedByEffector
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1988049287334353335, guid: 52dc4ba7a8aed8a478a46fa60e6f55b7,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52dc4ba7a8aed8a478a46fa60e6f55b7, type: 3}

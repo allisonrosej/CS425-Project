@@ -14,7 +14,7 @@ public class EnemyAttack : MonoBehaviour
     public CircleCollider2D cirCol;
     private Animator anim;
     private Health playerHealth;
-    public EnemyScout enemyScout;
+    private EnemyScout enemyScout;
     private void Start()
     {
         anim = GetComponent<Animator>();

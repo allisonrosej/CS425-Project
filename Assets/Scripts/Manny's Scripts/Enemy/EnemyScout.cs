@@ -12,7 +12,7 @@ public class EnemyScout : MonoBehaviour
     public float speed;
     private Vector3 initScale;
     public bool movingLeft;
-    public Animator anim;
+    private Animator anim;
 
     public float idleDur;
     public float idleTimer; 
