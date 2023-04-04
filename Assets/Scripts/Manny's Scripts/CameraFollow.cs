@@ -10,7 +10,7 @@ public class CameraFollow : MonoBehaviour
     public float smoothFactor = 2;
     public Vector3 minValues;
     public Vector3 maxValues;
-
+    public Collectibles collectibles; 
     private void FixedUpdate()
     {
         CamFollow();
@@ -18,6 +18,23 @@ public class CameraFollow : MonoBehaviour
 
     void CamFollow()
     {
+
+        if (collectibles.mushroomCount == 0)
+        {
+            minValues = new Vector3(-18, 5, -10);
+            maxValues = new Vector3(400, 200, -10);
+
+        }
+        else if (collectibles.mushroomCount == 1)
+        {
+            minValues = new Vector3(183, 9, -10);
+            maxValues = new Vector3(330, 99, -10);
+        }
+        else
+        {
+            minValues = new Vector3(351, 90, -10);
+            maxValues = new Vector3(356, 99, -10);
+        }
 
 
         // set camera position with offset

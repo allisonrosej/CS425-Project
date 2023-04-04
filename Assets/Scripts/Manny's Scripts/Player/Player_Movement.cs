@@ -149,6 +149,12 @@ public class Player_Movement : MonoBehaviour
         coyoteTime = GetComponent<CoyoteTime>();
 
     }
+    public void Respawn()
+    {
+        canMove = true;
+        pauseInput = false;
+        animator.SetTrigger("isJumping");
+    }
     void DisableMovement()
     {
         canMove = false;

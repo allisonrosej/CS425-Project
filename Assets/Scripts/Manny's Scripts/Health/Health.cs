@@ -21,6 +21,7 @@ public class Health : MonoBehaviour
     private float invincibilityDurationSeconds;
 
 
+
     // Leo's code for iframes
     public IEnumerator BecomeTemporarilyInvincible()
     {
@@ -78,12 +79,20 @@ public class Health : MonoBehaviour
 
     }
 
+    public void Respawn()
+    {
+        health = 5;
+        playerdead = false;
+        player.pauseInput = false;
+        player.canMove = true; 
+    }
+
     public void TakeDamage(int damage)
     {
 
         // Iframes
         if (isInvincible) return;
-
+        // if else damage placement
         health -= damage;
 
         if (health <= 0)
@@ -92,6 +101,7 @@ public class Health : MonoBehaviour
             player.pauseInput = true;
             //Death animation
             anim.SetTrigger("Die");
+
             LevelManager.instance.GameOver();
             
             //gameObject.SetActive(false);

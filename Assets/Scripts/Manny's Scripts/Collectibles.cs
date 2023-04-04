@@ -16,6 +16,8 @@ public class Collectibles : MonoBehaviour
     private void Start()
     {
         SetCountText();
+        coinCount = 0;
+        mushroomCount = 0;
         anim = GetComponent<Animator>();
     }
     private void Update()
