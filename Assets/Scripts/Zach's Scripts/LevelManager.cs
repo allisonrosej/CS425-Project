@@ -5,9 +5,11 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
-
+    public Animator anim;
     private void Awake()
     {
+       
+
         if (LevelManager.instance == null)
         {
             instance = this;
@@ -20,8 +22,22 @@ public class LevelManager : MonoBehaviour
         UIManager _ui = GetComponent<UIManager>();
         if (_ui != null)
         {
+
             _ui.ToggleDeathPanel();
         }
+    }
+
+    public void Death()
+    {
+
+        UIManager _ui = GetComponent<UIManager>();
+        _ui.ActiveDeathPanel();
+    }
+
+    public void Respawn()
+    {
+        UIManager _ui = GetComponent<UIManager>();
+        _ui.DeactiveDeathPanel();
     }
 
 }

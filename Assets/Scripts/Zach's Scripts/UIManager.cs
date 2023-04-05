@@ -11,4 +11,14 @@ public class UIManager : MonoBehaviour
         DeathPanel.SetActive(!DeathPanel.activeSelf);
         
     }
+
+    public void ActiveDeathPanel()
+    {
+        DeathPanel.SetActive(true);
+    }
+
+    public void DeactiveDeathPanel()
+    {
+        DeathPanel.SetActive(false);
+    }
 }
