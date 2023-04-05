@@ -10,12 +10,13 @@ public class CheckpointManager : MonoBehaviour
     private Health playerHealth;
     private Player_Movement playerMovement;
     public UIManager UIManager;
-
+ 
     private void Start()
     {
         lastCheckpoint = playerSpawnPoint;
         playerHealth = GameObject.Find("Player").GetComponent<Health>();
         playerMovement = GameObject.Find("Player").GetComponent<Player_Movement>();
+        
     }
 
     public void Respawn()
@@ -23,7 +24,8 @@ public class CheckpointManager : MonoBehaviour
         playerTransform.position = lastCheckpoint.position;
         playerHealth.Respawn();
         playerMovement.Respawn();
-        UIManager.ToggleDeathPanel();
+        LevelManager.instance.Respawn();
+        //UIManager.ToggleDeathPanel();
 
     }
 }

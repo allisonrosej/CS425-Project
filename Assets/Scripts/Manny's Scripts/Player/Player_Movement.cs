@@ -260,7 +260,7 @@ public class Player_Movement : MonoBehaviour
             Debug.Log("Jump");
             if (!isSliding)
             {
-                if ((isGrounded || (coyoteTime.CanCoyoteJump())) && jumps < 1 ) 
+                if ((!isInAir || (coyoteTime.CanCoyoteJump())) && jumps < 1 ) 
                     GroundJump();
                 else AirJump();
             }

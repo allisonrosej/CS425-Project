@@ -84,7 +84,8 @@ public class Health : MonoBehaviour
         health = 5;
         playerdead = false;
         player.pauseInput = false;
-        player.canMove = true; 
+        player.canMove = true;
+        
     }
 
     public void TakeDamage(int damage)
@@ -93,25 +94,26 @@ public class Health : MonoBehaviour
         // Iframes
         if (isInvincible) return;
         // if else damage placement
-        health -= damage;
 
+        if (health > 0)
+        {
+            health -= damage;
+            anim.SetTrigger("Hurt");
+            StartCoroutine(BecomeTemporarilyInvincible());
+        }
         if (health <= 0)
         {
             playerdead = true;
             player.pauseInput = true;
             //Death animation
             anim.SetTrigger("Die");
-
-            LevelManager.instance.GameOver();
+            //LevelManager.instance.Death();
+            LevelManager.instance.Death();
             
             //gameObject.SetActive(false);
             
         }
-        if (health > 0)
-        {
-            anim.SetTrigger("Hurt");
-            StartCoroutine(BecomeTemporarilyInvincible());
-        }
+        
             
 
 
