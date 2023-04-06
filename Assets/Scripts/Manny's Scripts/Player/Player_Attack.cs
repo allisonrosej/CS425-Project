@@ -14,7 +14,7 @@ public class Player_Attack : MonoBehaviour
 
     public float attackRate = 2f;
     private float nextAttackTime = 0f;
-
+    
     //private string attack = "Attack";
 
     public Transform firePoint;
@@ -22,6 +22,9 @@ public class Player_Attack : MonoBehaviour
     public GameObject[] bullets;
     public float time = 0.5f;
     private Player_Movement player;
+
+    public AudioSource meleeSound;
+    public AudioSource projectileSound;
 
     // Start is called before the first frame update
     void Start()
@@ -63,7 +66,7 @@ public class Player_Attack : MonoBehaviour
         // Play an attack animation 
         //Debug.Log("Attack");
         animator.SetTrigger("Melee Attack");
-
+        meleeSound.Play();
         // Detect enemies in range of attack 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
 
@@ -103,7 +106,7 @@ public class Player_Attack : MonoBehaviour
 
         bullets[FindBullets()].GetComponent<Bullet>().SetDirection(Mathf.Sign(transform.localScale.x));
 
-
+        projectileSound.Play();
         // Fireball object pooling 
 
 

@@ -12,6 +12,8 @@ public class Collectibles : MonoBehaviour
     public TextMeshProUGUI coinText;
     private Animator anim;
     public AudioSource coinCollectSound;
+    public AudioSource mushroomCollectSound;
+    public AudioSource heartCollectSound;
 
     private void Start()
     {
@@ -34,6 +36,7 @@ public class Collectibles : MonoBehaviour
             mushroomCount += 1;
             anim.SetTrigger("Dance");
             collision.gameObject.SetActive(false);
+            mushroomCollectSound.Play();
 
         }
 
@@ -50,6 +53,7 @@ public class Collectibles : MonoBehaviour
         {
             player.health += 1;
             collision.gameObject.SetActive(false);
+            heartCollectSound.Play();
         }
 
 
