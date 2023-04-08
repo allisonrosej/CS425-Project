@@ -256,8 +256,8 @@ public class Player_Movement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            animator.SetTrigger("isJumping");
-            Debug.Log("Jump");
+            
+            
             if (!isSliding)
             {
                 if ((!isInAir || (coyoteTime.CanCoyoteJump())) && jumps < 1 ) 
@@ -273,6 +273,7 @@ public class Player_Movement : MonoBehaviour
 
     void GroundJump()
     {
+        animator.SetTrigger("isJumping");
         rb.velocity = Vector2.up * jumpForce;
         jumps++;
         isInAir = true;
@@ -285,6 +286,7 @@ public class Player_Movement : MonoBehaviour
         if (currentJumps >= MaxAirJumps)
             return;
 
+        animator.SetTrigger("isJumping");
         rb.gravityScale = gravity;
         rb.velocity = new Vector2(0, 0);
         rb.velocity = Vector2.up * jumpForce;
@@ -294,11 +296,12 @@ public class Player_Movement : MonoBehaviour
 
     async void WallJump()
     {
+        animator.SetTrigger("isJumping");
         if (!EnableWallJump)
             return;
         // initially make velocity zero
         rb.velocity = Vector2.zero;
-
+        
         rb.AddForce(new Vector2(wallJumpForce / 2 * -horizontalDir, wallJumpForce), ForceMode2D.Impulse);
         pauseInput = true;
 
