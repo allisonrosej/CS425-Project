@@ -113,11 +113,18 @@ public class Health : MonoBehaviour
             //gameObject.SetActive(false);
             
         }
-        
-            
+       
+    }
 
+    public void PlusHeart(int plusHeart)
+    {
+        if (health >= 5)
+            health = 5; 
 
-
+        else
+        {
+            health += plusHeart;
+        }
     }
 
 }
