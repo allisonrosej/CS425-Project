@@ -51,9 +51,9 @@ public class Collectibles : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Heart"))
         {
-            player.PlusHeart(1);
+            player.health += 1;
             collision.gameObject.SetActive(false);
-            //heartCollectSound.Play();
+            heartCollectSound.Play();
         }
 
 
