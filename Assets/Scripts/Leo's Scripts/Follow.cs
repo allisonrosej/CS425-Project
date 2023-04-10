@@ -6,9 +6,12 @@ public class Follow : MonoBehaviour
 {
 
     public GameObject target;
+    public GameObject player;
     public float ratio = 0.05f;
     bool foundPlayer;
     public float range;
+
+    private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +26,8 @@ public class Follow : MonoBehaviour
     void Update()
     {
 
+        // Enemy sprite flips depending on player position
+        //this.spriteRenderer.flipX = player.transform.position.x > this.transform.position.x;
 
         if (!foundPlayer)
         {
@@ -58,6 +63,8 @@ public class Follow : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
 
         }
+
+
     }
 
     void OnDrawGizmos()

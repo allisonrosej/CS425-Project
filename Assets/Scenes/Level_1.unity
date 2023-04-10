@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 262.302, g: 324.99048, b: 430.14307, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -114187,13 +114187,15 @@ GameObject:
   - component: {fileID: 608182070}
   - component: {fileID: 608182071}
   - component: {fileID: 608182072}
-  - component: {fileID: 608182076}
-  - component: {fileID: 608182075}
   - component: {fileID: 608182074}
   - component: {fileID: 608182073}
-  m_Layer: 0
+  - component: {fileID: 608182079}
+  - component: {fileID: 608182078}
+  - component: {fileID: 608182080}
+  - component: {fileID: 608182081}
+  m_Layer: 9
   m_Name: Mage
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114316,24 +114318,9 @@ MonoBehaviour:
   playerHealth: {fileID: 1667039430}
   damage: 1
   attackCoolDown: 1
-  animator: {fileID: 0}
---- !u!114 &608182075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 608182069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71cd3b5e15b784a479604c827062dbb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  ratio: 0.05
-  range: 0
---- !u!70 &608182076
-CapsuleCollider2D:
+  animator: {fileID: 608182072}
+--- !u!58 &608182078
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -114345,9 +114332,66 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.123521805, y: -0.12352157}
-  m_Size: {x: 2.3127804, y: 3.34587}
-  m_Direction: 0
+  m_Offset: {x: -0.12434745, y: -0.80825996}
+  serializedVersion: 2
+  m_Radius: 0.9831164
+--- !u!114 &608182079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608182069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62514274c16e4824da4ace8464a432f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCoolDown: 1
+  range: 1
+  distance: 0.25
+  damage: 2
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  cirCol: {fileID: 608182078}
+--- !u!114 &608182080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608182069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8b9d5216c464b342b9da8feff3b3444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1667039407}
+  speed: 2
+  distanceToAttackPlayer: 12
+  animator: {fileID: 0}
+--- !u!50 &608182081
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608182069}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 15
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!4 &622653484 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2230539777267018370, guid: 463248ef9060b734fbbd41e2c676a3d7,
@@ -127856,6 +127900,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447662441084950640, guid: b51dd2e635cb4364e866bc3621d31b74,
+        type: 3}
+      propertyPath: range
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1447662441171348677, guid: b51dd2e635cb4364e866bc3621d31b74,
         type: 3}
