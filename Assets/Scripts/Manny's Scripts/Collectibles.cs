@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 public class Collectibles : MonoBehaviour
 {
 
@@ -28,6 +28,11 @@ public class Collectibles : MonoBehaviour
         {
             mushroomCount += 1;
         }
+
+        if (mushroomCount >= 3)
+        {
+            SceneManager.LoadScene("Win");
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -37,6 +42,8 @@ public class Collectibles : MonoBehaviour
             anim.SetTrigger("Dance");
             collision.gameObject.SetActive(false);
             mushroomCollectSound.Play();
+
+            
 
         }
 
