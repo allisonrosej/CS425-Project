@@ -78,6 +78,7 @@ public class Player_Movement : MonoBehaviour
     private int jumps;
 
     public AudioSource jumpSound;
+    public AudioSource dashSound;
 
 
 
@@ -447,6 +448,7 @@ public class Player_Movement : MonoBehaviour
                 animator.SetTrigger("Dash");
                 dashSmokePrefab.SetActive(true);
                 StartCoroutine(Dashing());
+                dashSound.Play();
             }
         }
 
