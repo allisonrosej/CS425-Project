@@ -60,7 +60,7 @@ public class Collectibles : MonoBehaviour
         {
             player.health += 1;
             collision.gameObject.SetActive(false);
-            heartCollectSound.Play();
+            //heartCollectSound.Play();
         }
 
 
