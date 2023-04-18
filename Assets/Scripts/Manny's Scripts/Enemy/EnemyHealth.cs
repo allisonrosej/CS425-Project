@@ -6,6 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     public float startingHealth = 10f;
     public float currentHealth;
+    public AudioSource enemyTakeDamageSound;
 
     public float iFrameDur = 1;
     public int numOfFlashes = 3;
@@ -28,6 +29,7 @@ public class EnemyHealth : MonoBehaviour
             anim.SetTrigger("Hurt");
             StartCoroutine(Iframes());
             // add iframes 
+            enemyTakeDamageSound.Play();
 
 
         }
