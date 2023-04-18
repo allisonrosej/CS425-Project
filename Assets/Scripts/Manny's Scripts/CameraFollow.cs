@@ -33,7 +33,7 @@ public class CameraFollow : MonoBehaviour
         else
         {
             minValues = new Vector3(351, 90, -10);
-            maxValues = new Vector3(356, 99, -10);
+            maxValues = new Vector3(550, 250, -10);
         }
 
 
