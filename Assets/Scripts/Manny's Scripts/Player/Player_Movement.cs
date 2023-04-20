@@ -80,6 +80,10 @@ public class Player_Movement : MonoBehaviour
     public AudioSource jumpSound;
     public AudioSource dashSound;
 
+    private Health PlayerHealth;
+
+    private float frictionAlive = 0.0f;
+    private float frictionDead = 1f;
 
 
     // Start is called before the first frame update
@@ -96,6 +100,8 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PlayerFriction();
+
         if (demo)
             return;
 
@@ -109,22 +115,6 @@ public class Player_Movement : MonoBehaviour
         BetterJump();
         Jump();
         Dash();
-
-        //if (!Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
-        //{
-        //    movementCanDash = false;
-        //}
-
-        //if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D));
-        //{
-        //    movementCanDash = true;
-        //}
-        
-        //Dash();  
-        //if (Input.GetKeyDown(KeyCode.X) && canDash && movementCanDash)
-        //{
-        //    StartCoroutine(Dash()); // This need to change
-        //}
         
     }
 
@@ -135,6 +125,20 @@ public class Player_Movement : MonoBehaviour
         CheckGrounded();
         CheckFalling();
 
+    }
+
+    void PlayerFriction()
+    {
+        if (PlayerHealth.playerdead == true)
+        {
+            rb.velocity = Vector2.zero;
+            rb.sharedMaterial.friction = frictionDead;
+            horizontalDir = 0;
+        }
+        else
+        {
+            rb.sharedMaterial.friction = frictionAlive;
+        }
     }
 
     void Animation()
@@ -148,6 +152,7 @@ public class Player_Movement : MonoBehaviour
         capCol = GetComponent<CapsuleCollider2D>();
         animator = GetComponent<Animator>();
         coyoteTime = GetComponent<CoyoteTime>();
+        PlayerHealth = GetComponent<Health>(); 
 
     }
     public void Respawn()
