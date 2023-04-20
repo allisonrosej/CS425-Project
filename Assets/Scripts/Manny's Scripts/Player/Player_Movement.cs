@@ -80,10 +80,6 @@ public class Player_Movement : MonoBehaviour
     public AudioSource jumpSound;
     public AudioSource dashSound;
 
-    private Health PlayerHealth;
-
-    private float frictionAlive = 0.0f;
-    private float frictionDead = 1f;
 
 
     // Start is called before the first frame update
@@ -100,7 +96,6 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlayerFriction();
 
         if (demo)
             return;
@@ -127,19 +122,7 @@ public class Player_Movement : MonoBehaviour
 
     }
 
-    void PlayerFriction()
-    {
-        if (PlayerHealth.playerdead == true)
-        {
-            rb.velocity = Vector2.zero;
-            rb.sharedMaterial.friction = frictionDead;
-            horizontalDir = 0;
-        }
-        else
-        {
-            rb.sharedMaterial.friction = frictionAlive;
-        }
-    }
+
 
     void Animation()
     {
@@ -152,7 +135,6 @@ public class Player_Movement : MonoBehaviour
         capCol = GetComponent<CapsuleCollider2D>();
         animator = GetComponent<Animator>();
         coyoteTime = GetComponent<CoyoteTime>();
-        PlayerHealth = GetComponent<Health>(); 
 
     }
     public void Respawn()
@@ -421,25 +403,6 @@ public class Player_Movement : MonoBehaviour
         }
     }
 
-    //IEnumerator Dash() 
-    //{
-
-
-    //    canDash = false;
-    //    isDashing = true;
-    //    float originalGravity = rb.gravityScale; // allows player not to be affected by gravity
-    //    rb.gravityScale = 0f; // sets gravity to zero
-    //    rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
-    //    tr.emitting = true; //display trail (IDK if we want this)
-    //    yield return new WaitForSeconds(dashingTime); // stops the player from dashing forever
-    //    tr.emitting = false; // stops displaying the trail render ( animation tail following the character)
-    //    rb.gravityScale = originalGravity;  // sets the gravity to og scale
-    //    isDashing = false; // stops dashing
-    //    yield return new WaitForSeconds(dashingCooldown); // allows a dash cooldown
-    //    canDash = true; // player can dash again after cooldown is done
-
-
-    //}
 
     void Dash()
     {
