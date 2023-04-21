@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CoyoteTime : MonoBehaviour
 {
-    [SerializeField] private float coyoteTime = 0.2f; // Time in seconds to allow for Coyote Time
+    public float coyoteTime = 0.2f; // Time in seconds to allow for Coyote Time
     private bool isGrounded = false;
     private float coyoteTimeCounter = 0.0f;
 

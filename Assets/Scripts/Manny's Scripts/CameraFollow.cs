@@ -8,8 +8,18 @@ public class CameraFollow : MonoBehaviour
     public Transform Player;
     public Vector3 offset;
     public float smoothFactor = 2;
-    public Vector3 minValues;
-    public Vector3 maxValues;
+    private Vector3 minValues;
+    private Vector3 maxValues;
+
+    public Vector3 MinBounds1;
+    public Vector3 MaxBounds1;
+
+    public Vector3 MinBounds2;
+    public Vector3 MaxBounds2;
+
+    public Vector3 MinBounds3;
+    public Vector3 MaxBounds3;
+
     public Collectibles collectibles; 
     private void FixedUpdate()
     {
@@ -21,19 +31,19 @@ public class CameraFollow : MonoBehaviour
 
         if (collectibles.mushroomCount == 0)
         {
-            minValues = new Vector3(-18, 5, -10);
-            maxValues = new Vector3(400, 200, -10);
+            minValues = MinBounds1;
+            maxValues = MaxBounds1;
 
         }
         else if (collectibles.mushroomCount == 1)
         {
-            minValues = new Vector3(183, 9, -10);
-            maxValues = new Vector3(330, 99, -10);
+            minValues = MinBounds2;
+            maxValues = MaxBounds2;
         }
         else
         {
-            minValues = new Vector3(351, 90, -10);
-            maxValues = new Vector3(356, 99, -10);
+            minValues = MinBounds3;
+            maxValues = MaxBounds3;
         }
 
 

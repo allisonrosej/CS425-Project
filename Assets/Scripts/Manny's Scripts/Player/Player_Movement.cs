@@ -78,6 +78,7 @@ public class Player_Movement : MonoBehaviour
     private int jumps;
 
     public AudioSource jumpSound;
+    public AudioSource dashSound;
 
 
 
@@ -95,6 +96,7 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (demo)
             return;
 
@@ -108,22 +110,6 @@ public class Player_Movement : MonoBehaviour
         BetterJump();
         Jump();
         Dash();
-
-        //if (!Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
-        //{
-        //    movementCanDash = false;
-        //}
-
-        //if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D));
-        //{
-        //    movementCanDash = true;
-        //}
-        
-        //Dash();  
-        //if (Input.GetKeyDown(KeyCode.X) && canDash && movementCanDash)
-        //{
-        //    StartCoroutine(Dash()); // This need to change
-        //}
         
     }
 
@@ -135,6 +121,8 @@ public class Player_Movement : MonoBehaviour
         CheckFalling();
 
     }
+
+
 
     void Animation()
     {
@@ -154,6 +142,7 @@ public class Player_Movement : MonoBehaviour
         canMove = true;
         pauseInput = false;
         animator.SetTrigger("isJumping");
+        
     }
     void DisableMovement()
     {
@@ -415,25 +404,6 @@ public class Player_Movement : MonoBehaviour
         }
     }
 
-    //IEnumerator Dash() 
-    //{
-
-
-    //    canDash = false;
-    //    isDashing = true;
-    //    float originalGravity = rb.gravityScale; // allows player not to be affected by gravity
-    //    rb.gravityScale = 0f; // sets gravity to zero
-    //    rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
-    //    tr.emitting = true; //display trail (IDK if we want this)
-    //    yield return new WaitForSeconds(dashingTime); // stops the player from dashing forever
-    //    tr.emitting = false; // stops displaying the trail render ( animation tail following the character)
-    //    rb.gravityScale = originalGravity;  // sets the gravity to og scale
-    //    isDashing = false; // stops dashing
-    //    yield return new WaitForSeconds(dashingCooldown); // allows a dash cooldown
-    //    canDash = true; // player can dash again after cooldown is done
-
-
-    //}
 
     void Dash()
     {
@@ -447,6 +417,7 @@ public class Player_Movement : MonoBehaviour
                 animator.SetTrigger("Dash");
                 dashSmokePrefab.SetActive(true);
                 StartCoroutine(Dashing());
+                dashSound.Play();
             }
         }
 

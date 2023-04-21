@@ -13,6 +13,7 @@ public class Health : MonoBehaviour
     private Animator anim;
     public bool playerdead;
     private Player_Movement player;
+    public AudioSource takeDamageSound;
 
     // Leo's code for iframes. This variable keeps track if player is invincible
     private bool isInvincible = false;
@@ -100,6 +101,8 @@ public class Health : MonoBehaviour
             health -= damage;
             anim.SetTrigger("Hurt");
             StartCoroutine(BecomeTemporarilyInvincible());
+            takeDamageSound.Play();
+
         }
         if (health <= 0)
         {
