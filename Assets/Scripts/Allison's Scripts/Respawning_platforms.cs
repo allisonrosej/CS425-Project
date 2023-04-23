@@ -5,16 +5,16 @@ using UnityEngine;
 public class Respawning_platforms : MonoBehaviour
 {
 
-    private Rigidbody2D rbd;
+    public Rigidbody2D rbd;
     private BoxCollider2D boxcollider;
 
-    public float fallplat;
+    private float fallplat;
 
-    public float fallplaton;
+    private float fallplaton;
 
-    public bool isFalling = false;
+    private bool isFalling = false;
 
-    public Vector2 initialposition;
+    private Vector2 initialposition;
 
     private void Awake()
     {
