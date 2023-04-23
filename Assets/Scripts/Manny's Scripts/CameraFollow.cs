@@ -20,7 +20,15 @@ public class CameraFollow : MonoBehaviour
     public Vector3 MinBounds3;
     public Vector3 MaxBounds3;
 
-    public Collectibles collectibles; 
+    public GameObject[] boundaries; 
+
+    public Collectibles collectibles;
+
+    private void Update()
+    {
+        StartCoroutine(Boundary());
+        
+    }
     private void FixedUpdate()
     {
         CamFollow();
@@ -33,17 +41,20 @@ public class CameraFollow : MonoBehaviour
         {
             minValues = MinBounds1;
             maxValues = MaxBounds1;
-
+            
         }
         else if (collectibles.mushroomCount == 1)
         {
+
             minValues = MinBounds2;
             maxValues = MaxBounds2;
+
         }
         else
         {
             minValues = MinBounds3;
             maxValues = MaxBounds3;
+
         }
 
 
@@ -62,4 +73,26 @@ public class CameraFollow : MonoBehaviour
         // Set the cameras position to equal desired camera position
         transform.position = smoothPosition; 
     }
+
+    private IEnumerator Boundary()
+    {
+        if (collectibles.mushroomCount == 0)
+        {
+            yield return new WaitForSeconds(0);
+            boundaries[0].SetActive(true);
+
+        }
+        else if (collectibles.mushroomCount == 1)
+        {
+            yield return new WaitForSeconds(2);
+            boundaries[1].SetActive(true);
+        }
+        else
+        {
+            yield return new WaitForSeconds(2);
+            boundaries[2].SetActive(true);
+        }
+
+    }
 }
+
