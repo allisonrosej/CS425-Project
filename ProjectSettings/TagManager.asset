@@ -10,6 +10,7 @@ TagManager:
   - Coin
   - Heart
   - menuMusicTag
+  - masterVolumeTag
   layers:
   - Default
   - TransparentFX
