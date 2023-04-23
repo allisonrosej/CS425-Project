@@ -14,10 +14,12 @@ public class volumeSliderScript : MonoBehaviour
         if(!PlayerPrefs.HasKey("soundVolume")){
             PlayerPrefs.SetFloat("soundVolume", 1);
             Load();
+            
         }
 
         else{
             Load();
+            AudioListener.volume = volumeSlider.value;
         }
 
     }
