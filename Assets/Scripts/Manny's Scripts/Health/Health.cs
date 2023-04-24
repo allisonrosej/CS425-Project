@@ -31,7 +31,7 @@ public class Health : MonoBehaviour
     {
         Debug.Log("Player turned invincible!");
         isInvincible = true;
-        //Physics2D.IgnoreLayerCollision(10, 9, true);
+        Physics2D.IgnoreLayerCollision(10, 9, true);
 
         for (int i = 0; i < numOfFlashes; i++)
         {
@@ -44,7 +44,7 @@ public class Health : MonoBehaviour
 
         //yield return new WaitForSeconds(invincibilityDurationSeconds);
         isInvincible = false;
-        //Physics2D.IgnoreLayerCollision(10, 9, false);
+        Physics2D.IgnoreLayerCollision(10, 9, false);
         Debug.Log("Player is no longer invincible!");
     }
 

@@ -14,6 +14,13 @@ public class Checkpoint : MonoBehaviour
 
             Debug.Log("Checkpoint Reached!");
         }
+
+        if (collision.tag == "BossSpawn")
+        {
+            checkpointManager.lastCheckpoint = collision.transform;
+
+            Debug.Log("Boss Checkpoint Reached!");
+        }
     }
    
 }
