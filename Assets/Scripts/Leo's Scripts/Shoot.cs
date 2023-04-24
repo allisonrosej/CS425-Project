@@ -11,7 +11,7 @@ public class Shoot : MonoBehaviour
     private float timer;
     private Animator anim;
     private GameObject player;
-
+    public Health playerHealth;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +34,7 @@ public class Shoot : MonoBehaviour
 
 
 
-            if (timer > 1)
+            if (timer > 1 && !playerHealth.playerdead)
             {
 
 

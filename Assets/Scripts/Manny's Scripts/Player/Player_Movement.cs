@@ -139,9 +139,10 @@ public class Player_Movement : MonoBehaviour
     }
     public void Respawn()
     {
+        animator.SetTrigger("isJumping");
         canMove = true;
         pauseInput = false;
-        animator.SetTrigger("isJumping");
+        
         
     }
     void DisableMovement()

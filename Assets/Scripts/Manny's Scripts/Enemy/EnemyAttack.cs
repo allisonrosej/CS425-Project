@@ -13,7 +13,7 @@ public class EnemyAttack : MonoBehaviour
     public LayerMask playerLayer;
     public CircleCollider2D cirCol;
     private Animator anim;
-    private Health playerHealth;
+    public Health playerHealth;
     private EnemyScout enemyScout;
     private void Start()
     {
