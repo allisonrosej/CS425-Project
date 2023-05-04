@@ -59,10 +59,10 @@ public class Health : MonoBehaviour
     private void Update()
     {
         DisplayHealth();
-        if (Input.GetKeyDown(KeyCode.P))
+       /* if (Input.GetKeyDown(KeyCode.P))
         {
             TakeDamage(1);
-        }
+        }*/
     }
 
     void DisplayHealth()
