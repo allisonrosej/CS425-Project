@@ -8,6 +8,8 @@ public class EnemyHealth : MonoBehaviour
     public float currentHealth;
     public AudioSource enemyTakeDamageSound;
 
+    public AudioSource enemyDeathSound;
+
     public float iFrameDur = 1;
     public int numOfFlashes = 3;
     private SpriteRenderer spriteRen;
@@ -38,7 +40,7 @@ public class EnemyHealth : MonoBehaviour
         {
             // Enemy dies
             anim.SetTrigger("Die");
-            
+            enemyDeathSound.Play();
         }
     }
 
