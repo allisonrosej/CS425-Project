@@ -10,6 +10,8 @@ TagManager:
   - Coin
   - Heart
   - menuMusicTag
+  - masterVolumeTag
+  - BossSpawn
   layers:
   - Default
   - TransparentFX

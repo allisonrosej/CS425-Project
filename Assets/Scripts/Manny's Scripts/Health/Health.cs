@@ -14,6 +14,9 @@ public class Health : MonoBehaviour
     public bool playerdead;
     private Player_Movement player;
     public AudioSource takeDamageSound;
+    public float iFrameDur = 1;
+    public int numOfFlashes = 3;
+    private SpriteRenderer spriteRen;
 
     // Leo's code for iframes. This variable keeps track if player is invincible
     private bool isInvincible = false;
@@ -28,9 +31,20 @@ public class Health : MonoBehaviour
     {
         Debug.Log("Player turned invincible!");
         isInvincible = true;
+        Physics2D.IgnoreLayerCollision(10, 9, true);
 
-        yield return new WaitForSeconds(invincibilityDurationSeconds);
+        for (int i = 0; i < numOfFlashes; i++)
+        {
+            spriteRen.color = new Color(1, 0, 0, 0.5f);
+            yield return new WaitForSeconds(iFrameDur / (numOfFlashes * 2));
+            spriteRen.color = Color.white;
+            yield return new WaitForSeconds(iFrameDur / (numOfFlashes * 2));
+        }
+
+
+        //yield return new WaitForSeconds(invincibilityDurationSeconds);
         isInvincible = false;
+        Physics2D.IgnoreLayerCollision(10, 9, false);
         Debug.Log("Player is no longer invincible!");
     }
 
@@ -38,16 +52,17 @@ public class Health : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         player = GetComponent<Player_Movement>();
+        spriteRen = GetComponent<SpriteRenderer>();
         playerdead = false;
     }
 
     private void Update()
     {
         DisplayHealth();
-        if (Input.GetKeyDown(KeyCode.P))
+       /* if (Input.GetKeyDown(KeyCode.P))
         {
             TakeDamage(1);
-        }
+        }*/
     }
 
     void DisplayHealth()

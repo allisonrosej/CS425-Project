@@ -10,7 +10,7 @@ public class Follow : MonoBehaviour
     public float ratio = 0.05f;
     bool foundPlayer;
     public float range;
-
+    public Health PlayerHealth;
     private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
@@ -45,7 +45,7 @@ public class Follow : MonoBehaviour
         }
 
 
-        if (foundPlayer)
+        if (foundPlayer && !PlayerHealth.playerdead)
         {
 
             // remove = ratio if uncommenting code below

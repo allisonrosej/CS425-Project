@@ -44,7 +44,7 @@ public class Bullet : MonoBehaviour
         {
            // TestEnemy enemy;
             enemyHealth = collision.GetComponent<EnemyHealth>();
-            enemyHealth.TakeDamage(3);
+            enemyHealth.TakeDamage(1);
         }
 
 

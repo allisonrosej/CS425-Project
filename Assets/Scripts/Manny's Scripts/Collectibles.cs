@@ -24,7 +24,7 @@ public class Collectibles : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             mushroomCount += 1;
         }

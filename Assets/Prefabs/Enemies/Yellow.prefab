@@ -143,8 +143,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f46f747d3ce477e46b24dc9ce69788d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 10
+  startingHealth: 4
   currentHealth: 0
+  enemyTakeDamageSound: {fileID: 0}
   iFrameDur: 1
   numOfFlashes: 3
 --- !u!114 &136954956736376971
@@ -167,6 +168,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   cirCol: {fileID: 136954956736376973}
+  playerHealth: {fileID: 0}
 --- !u!114 &136954956736376972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,7 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  speed: 5
+  speed: 3.5
   distanceToAttackPlayer: 10
   animator: {fileID: 0}
 --- !u!58 &136954956736376973
