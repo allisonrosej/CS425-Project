@@ -1212,8 +1212,7 @@ PrefabInstance:
     - target: {fileID: 6177000967076017473, guid: de67d58a450b4944dba43d93b92fb9eb,
         type: 3}
       propertyPath: m_text
-      value: "Movement: \t\t\nASWD or Arrow Keys \n\nDash: \nL\n\nMelee Attack: \nJ\n\nProjectile
-        Attack: \nK\n\n"
+      value: "Movement: \t\t\nASWD or Arrow Keys \n\nDash: \nL\n\nMelee Attack: \nJ\n\n\n\n"
       objectReference: {fileID: 0}
     - target: {fileID: 6177000967076017473, guid: de67d58a450b4944dba43d93b92fb9eb,
         type: 3}
