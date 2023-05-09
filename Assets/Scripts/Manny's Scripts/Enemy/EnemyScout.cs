@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyScout : MonoBehaviour
 {
+    [Header("Enemy Scout Settings:")]
     public Transform leftEdge;
     public Transform rightEdge;
 
@@ -27,6 +28,7 @@ public class EnemyScout : MonoBehaviour
     {
         if (movingLeft)
         {
+            // keep moving in that direction until you reach the edge
             if (enemy.position.x >= leftEdge.position.x)
             {
                 MoveInDirection(-1);
@@ -54,6 +56,7 @@ public class EnemyScout : MonoBehaviour
         
     }
 
+    // ChangeDirection() method deactivates the walking animation and changes the direction of the enemy. 
     private void ChangeDirection()
     {
         anim.SetBool("isWalking", false);
@@ -63,6 +66,8 @@ public class EnemyScout : MonoBehaviour
         if (idleTimer > idleDur)
             movingLeft = !movingLeft;
     }
+
+    // MoveInDirection() method moves the enemy in a given direction and also triggers the walking animation the enemy
     private void MoveInDirection(int _direction)
     {
         idleTimer = 0;
@@ -70,11 +75,11 @@ public class EnemyScout : MonoBehaviour
         // make enemy face direction 
         enemy.localScale = new Vector3(Mathf.Abs(initScale.x) * _direction, initScale.y, initScale.z);
         // move in that direction 
-
         enemy.position = new Vector3(enemy.position.x + Time.deltaTime * _direction * speed, enemy.position.y, enemy.position.z);
 
     }
 
+    // OnDisable() method deactivates the walking animation of the enemy
     private void OnDisable()
     {
         anim.SetBool("isWalking", false);

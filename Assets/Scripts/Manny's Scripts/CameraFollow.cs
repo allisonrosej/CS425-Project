@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [Header("Camera Settings")]
+    [Header("Camera Settings:")]
     public Transform Player;
     public Vector3 offset;
     public float smoothFactor = 2;
     private Vector3 minValues;
     private Vector3 maxValues;
 
+    // Boundaries
     public Vector3 MinBounds1;
     public Vector3 MaxBounds1;
-
     public Vector3 MinBounds2;
     public Vector3 MaxBounds2;
-
     public Vector3 MinBounds3;
     public Vector3 MaxBounds3;
 
@@ -36,7 +35,7 @@ public class CameraFollow : MonoBehaviour
 
     void CamFollow()
     {
-
+        // Sets the cameras boundaries depending on the mushroom count
         if (collectibles.mushroomCount == 0)
         {
             minValues = MinBounds1;
@@ -74,6 +73,7 @@ public class CameraFollow : MonoBehaviour
         transform.position = smoothPosition; 
     }
 
+    // Boundary() method activates certain gameobjects to stop the player from going backwards after collecting a mushroom
     private IEnumerator Boundary()
     {
         if (collectibles.mushroomCount == 0)

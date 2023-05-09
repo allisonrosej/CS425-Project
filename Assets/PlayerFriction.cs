@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerFriction : MonoBehaviour
 {
+    [Header("Player Friction Settings: ")]
     private Health playerHealth;
     private Rigidbody2D rb;
     private Player_Movement playerMovement;
@@ -23,17 +24,19 @@ public class PlayerFriction : MonoBehaviour
     {
         ModifyFriction();
     }
+
+    // ModifyFriction() method modifies the players friction depending if the player is dead or alive.
     void ModifyFriction()
     {
         if (playerHealth.playerdead == true)
         {
-            rb.velocity = Vector2.zero;
-            rb.sharedMaterial.friction = frictionDead;
+            rb.velocity = Vector2.zero;     // player velocity to zero
+            rb.sharedMaterial.friction = frictionDead; // set friction to 1
             playerMovement.horizontalDir = 0f;
         }
         else
         {
-            rb.sharedMaterial.friction = frictionAlive;
+            rb.sharedMaterial.friction = frictionAlive; // set friction to 0
         }
     }
 }

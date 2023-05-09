@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    [Header("Enemy Health Settings:")]
     public float startingHealth = 10f;
     public float currentHealth;
     public AudioSource enemyTakeDamageSound;
@@ -21,6 +22,8 @@ public class EnemyHealth : MonoBehaviour
         spriteRen = GetComponent<SpriteRenderer>();
     }
 
+    // TakeDamage() method takes a float and subtracts it from the current Health value. It triggers the hurt 
+    // animation if health is greater than zero and the death animation if health is <= 0
    public void TakeDamage(float damage)
     {
         currentHealth -= damage; 
@@ -29,11 +32,9 @@ public class EnemyHealth : MonoBehaviour
         {
             // Enemy hurt
             anim.SetTrigger("Hurt");
-            StartCoroutine(Iframes());
-            // add iframes 
+          
+            StartCoroutine(Iframes());  // add iframes 
             enemyTakeDamageSound.Play();
-
-
         }
 
         else
@@ -44,6 +45,8 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    // Iframes method gives the enemy invisible frames from the player by ignoring the collision between the enemy and the 
+    // player. The method also flashes the enemy red and white when they are in iframes.
     private IEnumerator Iframes()
     {
         Physics2D.IgnoreLayerCollision(10, 9, true);
@@ -61,11 +64,13 @@ public class EnemyHealth : MonoBehaviour
 
     }
 
+    // Deactivate() method deactivates the enemy gameobject at the end of the death animation of the enemy.
     private void Deactivate()
     {
         gameObject.SetActive(false);
     }
 
+    // RedAnimation() method is called in the first second of the death animation to make the enemy sprite look red.
     private void RedAnimation()
     {
         spriteRen.color = new Color(1, 0, 0, 0.5f);

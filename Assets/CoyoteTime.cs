@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CoyoteTime : MonoBehaviour
 {
-    public float coyoteTime = 0.2f; // Time in seconds to allow for Coyote Time
+    [Header("Coyote Time Settings:")]
+    public float coyoteTime = 0.2f; // Coyote time window
     private bool isGrounded = false;
     private float coyoteTimeCounter = 0.0f;
 

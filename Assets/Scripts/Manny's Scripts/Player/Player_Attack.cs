@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player_Attack : MonoBehaviour
 {
-
+    [Header("Player Attack Settings: ")]
     public Animator animator;
 
     public Transform attackPoint;
@@ -40,6 +40,7 @@ public class Player_Attack : MonoBehaviour
         if (player.demo)
             return; 
 
+        // attack cool down
         if (Time.time >= nextAttackTime)
         {
             if (Input.GetKeyDown(KeyCode.J))
@@ -55,12 +56,10 @@ public class Player_Attack : MonoBehaviour
                 nextAttackTime = Time.time + 1 / attackRate;
             }
         }
-
-
-
-
     }
 
+    // Attack() method creates a circle where the sword is located and gets the enemy heath
+    // component and causes damage to the enemy
     private void Attack()
     {
         // Play an attack animation 
@@ -69,9 +68,6 @@ public class Player_Attack : MonoBehaviour
         meleeSound.Play();
         // Detect enemies in range of attack 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
-
-
-
 
         // Damage them
         foreach (Collider2D enemy in hitEnemies)
@@ -84,12 +80,16 @@ public class Player_Attack : MonoBehaviour
 
     }
 
+    // TimeForNextAttack() method causes a delay until the next attack
     IEnumerator TimeForNextAttack()
     {
         yield return new WaitForSeconds(nextAttackTime);
     }
+
+    // OnDrawGizmosSelected() Draws the circle of the hit circle of the sword attack
     private void OnDrawGizmosSelected()
     {
+        // if attack point not set then dont draw the circle
         if (attackPoint == null)
         {
             return;
@@ -97,21 +97,22 @@ public class Player_Attack : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
+    // Shoot() method trigers the projectile attack animation and shoots the bullet given the firepoint position and rotation
     IEnumerator Shoot()
     {
         animator.SetTrigger("Projectile Attack");
         yield return new WaitForSeconds(time);
+        // Fireball object pooling 
         bullets[FindBullets()].transform.position = firePoint.position;
         bullets[FindBullets()].transform.rotation = firePoint.rotation;
 
         bullets[FindBullets()].GetComponent<Bullet>().SetDirection(Mathf.Sign(transform.localScale.x));
 
         projectileSound.Play();
-        // Fireball object pooling 
-
-
+        
     }
 
+    // FindBullets() method check in the bullet array for any bullets that are not active and returns the index
     private int FindBullets()
     {
         for (int i = 0; i < bullets.Length; i++)
@@ -122,6 +123,5 @@ public class Player_Attack : MonoBehaviour
 
         return 0;
     }
-
 
 }

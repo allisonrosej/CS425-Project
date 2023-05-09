@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [Header("Bullet Settings: ")]
     public float speed;
-
     public CircleCollider2D cirCollider;
     public Animator animator;
-
     public bool hit;
     private float direction;
     public Rigidbody2D rb;
     private EnemyHealth enemyHealth;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,17 +32,17 @@ public class Bullet : MonoBehaviour
         float movementSpeed = speed * Time.deltaTime;
         transform.Translate(movementSpeed, 0, 0);
 
-
-
     }
 
+    // checks if the bullet has collided with enemy and gets enemies health script and causes damage.
+    // Then triggers the explode animation of the bullet.
     private void OnTriggerEnter2D(Collider2D collision)
     {
         hit = true;
 
+        // if bullet hits enemy then cause damage to the enemy
         if (collision.gameObject.tag == "Enemy")
         {
-           // TestEnemy enemy;
             enemyHealth = collision.GetComponent<EnemyHealth>();
             enemyHealth.TakeDamage(1);
         }
@@ -52,6 +52,7 @@ public class Bullet : MonoBehaviour
         animator.SetTrigger("Explode");
     }
 
+    // SetDirection() method give a direction send the bullet in that dirrection.
     public void SetDirection(float _direction)
     {
         direction = _direction;
@@ -67,6 +68,7 @@ public class Bullet : MonoBehaviour
         // transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
     }
 
+    // Deactivate() method deactives the bullet in the explosion animation
     private void Deactivate()
     {
         gameObject.SetActive(false);

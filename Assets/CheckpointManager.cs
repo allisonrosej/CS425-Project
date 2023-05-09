@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CheckpointManager : MonoBehaviour
 {
+    [Header("Checkpoint Manager Settings: ")]
     public Transform playerSpawnPoint;
     public Transform playerTransform; 
     public Transform lastCheckpoint;
@@ -13,12 +14,15 @@ public class CheckpointManager : MonoBehaviour
  
     private void Start()
     {
+        // starts checkpoint to players spawn point
         lastCheckpoint = playerSpawnPoint;
         playerHealth = GameObject.Find("Player").GetComponent<Health>();
         playerMovement = GameObject.Find("Player").GetComponent<Player_Movement>();
         
     }
 
+    // Respawns the player using the last checkpoint position. Calls the functions to 
+    // reset the health, reenables playermovement and deactivates the death panel. 
     public void Respawn()
     {
         playerTransform.position = lastCheckpoint.position;

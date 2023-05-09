@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
+    [Header("Health Settings:")]
     public int health;
     public int numOfHearts;
     public Image[] hearts;
@@ -65,6 +66,7 @@ public class Health : MonoBehaviour
         }*/
     }
 
+    // DisplayHealth Method Displays the hearts using an array and a counter for diplaying empty and full heart sprites.
     void DisplayHealth()
     {
         // Set health equal to number of hearts
@@ -95,6 +97,7 @@ public class Health : MonoBehaviour
 
     }
 
+    // Respawn method resets the player with 5 hearts and triggers appropriate flags
     public void Respawn()
     {
         health = 5;
@@ -104,13 +107,14 @@ public class Health : MonoBehaviour
         
     }
 
+    // TakeDamage method handles taking damage for the player by subtracting the damage to health 
     public void TakeDamage(int damage)
     {
 
         // Iframes
         if (isInvincible) return;
-        // if else damage placement
 
+        // take damage
         if (health > 0)
         {
             health -= damage;
@@ -119,16 +123,14 @@ public class Health : MonoBehaviour
             takeDamageSound.Play();
 
         }
+        // trigger death for player
         if (health <= 0)
         {
             playerdead = true;
             player.pauseInput = true;
             //Death animation
             anim.SetTrigger("Die");
-            //LevelManager.instance.Death();
             LevelManager.instance.Death();
-            
-            //gameObject.SetActive(false);
             
         }
         

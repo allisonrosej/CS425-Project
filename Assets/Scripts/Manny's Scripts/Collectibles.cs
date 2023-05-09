@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 public class Collectibles : MonoBehaviour
 {
-
+    [Header("Collectibles Settings:")]
     public int mushroomCount = 0;
     public int coinCount = 0;
     public Health player;
@@ -29,13 +29,17 @@ public class Collectibles : MonoBehaviour
             mushroomCount += 1;
         }
 
+        // Win condition
         if (mushroomCount >= 3)
         {
             SceneManager.LoadScene("Win");
         }
     }
+
+    // Keeps count of the mushrooms, coins, and hearts when it collides with those items
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // mushroom count
         if (collision.gameObject.CompareTag("Mushroom"))
         {
             mushroomCount += 1;
@@ -46,7 +50,7 @@ public class Collectibles : MonoBehaviour
             
 
         }
-
+        // coin count
         if (collision.gameObject.CompareTag("Coin"))
         {
             coinCount += 1;
@@ -55,9 +59,10 @@ public class Collectibles : MonoBehaviour
             coinCollectSound.Play();
 
         }
-
+        // Heart count
         if (collision.gameObject.CompareTag("Heart"))
         {
+            // Increase health by one heart
             player.health += 1;
             collision.gameObject.SetActive(false);
             heartCollectSound.Play();
@@ -66,6 +71,7 @@ public class Collectibles : MonoBehaviour
 
     }
 
+    // SetCountTest() method sets the count of the coins to the text mesh pro of the UI
     void SetCountText()
     {
         coinText.text = coinCount.ToString();
